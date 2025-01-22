@@ -1,0 +1,18 @@
+CPD_ID	CPD_NAME	mz_row_Statistic	From_mz_row	From_EmpiricalCompound
+C06099	(+)-Limonene; (+)-(R)-Limonene; (+)-(4R)-Limonene	4.662505546059164	row638	E106
+C00366	Urate	-3.5784548334662474	row975	E210
+C00065	L-Serine	-4.123848550850408	row297	E42
+C00836	Sphinganine	3.719686096576244	row2124	E417
+C00836	Sphinganine	3.943919307776894	row2129	E417
+C00217	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid	-3.4228344329025067	row986	E215
+C06078		4.662505546059164	row638	E106
+C06078		3.6818074475194655	row639	E105
+C00740	D-Serine	-4.123848550850408	row297	E42
+C00346	Ethanolamine phosphate	-3.7096128470938865	row674	E118
+C05938	L-4-Hydroxyglutamate semialdehyde	-3.4228344329025067	row986	E215
+C00025	L-Glutamate	-3.4228344329025067	row986	E215
+C04751	5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate	4.506695711216134	row2398	E216
+C00521	(-)-Limonene; (-)-(S)-Limonene; (-)-(4S)-Limonene	3.6818074475194655	row639	E105
+C05650	Tetrahydropteridine; 5,6,7,8-Tetrahydropteridine	-3.723705028009197	row861	E170
+C00521	(-)-Limonene; (-)-(S)-Limonene; (-)-(4S)-Limonene	4.662505546059164	row638	E106
+C06099	(+)-Limonene; (+)-(R)-Limonene; (+)-(4R)-Limonene	3.6818074475194655	row639	E105

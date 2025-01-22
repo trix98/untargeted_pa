@@ -1,0 +1,62 @@
+CPD_ID	CPD_NAME	mz_row_Statistic	From_mz_row	From_EmpiricalCompound
+C00399	Ubiquinone	5.1169021252093865	row2234	E426
+C00346	Ethanolamine phosphate	-3.7096128470938865	row674	E118
+C05490	11-Dehydrocorticosterone	-2.802058117720102	row2451	E462
+CE6185	omega-carboxy-trinor-leukotriene B4	4.600601388487577	row2365	E445
+C16604	2-Hydroxyiminostilbene	-4.123848550850408	row297	E43
+C02642	N-Carbamoyl-beta-alanine	-2.650846354972827	row819	E92
+C00327	L-Citrulline; 2-Amino-5-ureidovaleric acid; Citrulline	-2.6430066046463443	row1253	E230
+C02934	3-Dehydrosphinganine	3.254292868424291	row2109	E416
+C00521	(-)-Limonene; (-)-(S)-Limonene; (-)-(4S)-Limonene	4.662505546059164	row638	E106
+C18045		3.1754537827613123	row2143	E184
+C05139	16alpha-Hydroxydehydroepiandrosterone; 5-Androstene-3beta,16alpha-diol-17-one	2.7061613634660975	row2151	E184
+C18075		3.1754537827613123	row2143	E184
+CE5931		2.9733431233085392	row2494	E473
+CE6234	prostaglandin H1	2.9733431233085392	row2494	E473
+C11134	Testosterone glucuronide; Testosterone 17beta-(beta-D-glucuronide)	3.4077386828093013	row3278	E553
+C05480	3alpha-Hydroxy-5beta-pregnane-20-one	5.447298528054794	row2240	E436
+C00921	Dihydropteroate; 7,8-Dihydropteroate	3.194834137923077	row2350	E444
+CE5994	20-oxo-leukotriene E4	2.8167757993599056	row3226	E545
+C00363	dTDP	-4.268182704302178	row3082	E530
+C14497	6beta-Hydroxytestosterone; 6beta,17beta-Dihydroxyandrost-4-en-3-one	2.7574301774692085	row2299	E184
+C00135	L-Histidine	-3.1234691800502827	row1053	E156
+C05294	19-Hydroxytestosterone; 17beta,19-Dihydroxyandrost-4-en-3-one	2.7574301774692085	row2299	E184
+C06099	(+)-Limonene; (+)-(R)-Limonene; (+)-(4R)-Limonene	3.6818074475194655	row639	E105
+C00836	Sphinganine	3.943919307776894	row2129	E417
+C16612	Citalopram aldehyde	4.335022655720577	row2216	E140
+C14497	6beta-Hydroxytestosterone; 6beta,17beta-Dihydroxyandrost-4-en-3-one	2.7061613634660975	row2151	E184
+C00740	D-Serine	-4.123848550850408	row297	E42
+C05294	19-Hydroxytestosterone; 17beta,19-Dihydroxyandrost-4-en-3-one	2.7061613634660975	row2151	E184
+C00152	L-Asparagine	-2.650846354972827	row819	E92
+C00906	5,6-Dihydrothymine	2.650143063728371	row537	E81
+C00319	Sphingosine	3.254292868424291	row2109	E416
+C05139	16alpha-Hydroxydehydroepiandrosterone; 5-Androstene-3beta,16alpha-diol-17-one	3.1754537827613123	row2143	E184
+CE6185	omega-carboxy-trinor-leukotriene B4	4.612990550740651	row2354	E445
+C00521	(-)-Limonene; (-)-(S)-Limonene; (-)-(4S)-Limonene	3.6818074475194655	row639	E105
+CE2211	allopregnanolone	5.447298528054794	row2240	E436
+CE5924		2.9733431233085392	row2494	E473
+CE5139	12-oxo-20-dihydroxy-leukotriene B4	4.5457253692359965	row2567	E483
+tststeroneglc	testosterone glucuronide	3.4077386828093013	row3278	E553
+CE5828		2.9733431233085392	row2494	E473
+C05650	Tetrahydropteridine; 5,6,7,8-Tetrahydropteridine	-3.723705028009197	row861	E170
+C06078		4.662505546059164	row638	E106
+C00065	L-Serine	-4.123848550850408	row297	E42
+C08012	Levomethadyl acetate; LAAM	2.9733431233085392	row2494	E473
+CE4989	20-OH-10,11-dihydro-leukotriene B4	2.9733431233085392	row2494	E473
+C18075		2.7574301774692085	row2299	E184
+C14497	6beta-Hydroxytestosterone; 6beta,17beta-Dihydroxyandrost-4-en-3-one	3.1754537827613123	row2143	E184
+C05294	19-Hydroxytestosterone; 17beta,19-Dihydroxyandrost-4-en-3-one	3.1754537827613123	row2143	E184
+C18045		2.7574301774692085	row2299	E184
+CE6185	omega-carboxy-trinor-leukotriene B4	-2.766908059130478	row2368	E447
+C00135	L-Histidine	-3.428645218029281	row829	E157
+C18045		2.7061613634660975	row2151	E184
+C18075		2.7061613634660975	row2151	E184
+C12144	Phytosphingosine; 4-D-Hydroxysphinganine	3.154835394284274	row2227	E435
+CE5929		2.9733431233085392	row2494	E473
+C00025	L-Glutamate	-3.4228344329025067	row986	E215
+C05938	L-4-Hydroxyglutamate semialdehyde	-3.4228344329025067	row986	E215
+C00217	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid	-3.4228344329025067	row986	E215
+C06099	(+)-Limonene; (+)-(R)-Limonene; (+)-(4R)-Limonene	4.662505546059164	row638	E106
+C06078		3.6818074475194655	row639	E105
+C05139	16alpha-Hydroxydehydroepiandrosterone; 5-Androstene-3beta,16alpha-diol-17-one	2.7574301774692085	row2299	E184
+C00836	Sphinganine	3.719686096576244	row2124	E417

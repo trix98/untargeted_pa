@@ -1,0 +1,120 @@
+pathway	overlap_size	pathway_size	p-value	overlap_EmpiricalCompounds (id)	overlap_features (id)	overlap_features (name)
+Vitamin B9 (folate) metabolism	4	5	0.00042013276195277706	E342,E665,E532,E826	C00217/C00025/C05938,C00504,C01045/C01042,C00921	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$Folate$N-Formyl-L-glutamate/N-Acetyl-L-aspartate$Dihydropteroate; 7,8-Dihydropteroate
+Carnitine shuttle	5	11	0.005209646248214436	E1152,E1247,E1317,E1318,E934	C02990,ttdcrn,hdd2crn/hdcecrn,elaidcrn/vacccrn/odecrn,tmndnccrn	L-Palmitoylcarnitine$tetradecanoyl carnitine$trans-Hexadec-2-enoyl carnitine/Hexadecenoyl carnitine$Elaidic carnitine/Vaccenyl carnitine/octadecenoyl carnitine$Timnodonyl carnitine
+Aminosugars metabolism	5	13	0.01226787664902109	E342,E480,E660,E210,E800	C00217/C00025/C05938,C00074,C01074/C00645/C00140,C00352/C12214,C00128	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$Phosphoenolpyruvate$N-Acetylgalactosamine; N-Acetylchondrosamine; 2-Acetamido-2-deoxygalactose; GalNAc/N-Acetyl-D-mannosamine; 2-Acetamido-2-deoxy-D-mannose/N-Acetyl-D-glucosamine$D-Glucosamine 6-phosphate/Aminofructose 6-phosphate; Amino-D-fructose 6-phosphate$CMP-N-acetylneuraminate
+Ascorbate (Vitamin C) and Aldarate Metabolism	4	9	0.012603982858583312	E1271,E391,E783,E251	C00725/C04593,C00051,C00127,C01620/C00262	Lipoate; Lipoic acid; alpha-Lipoic acid; Thioctic acid/(2S,3R)-3-Hydroxybutane-1,2,3-tricarboxylate; Methylisocitrate; Methylisocitric acid$Reduced glutathione$Oxidized glutathione$/Hypoxanthine
+Methionine and cysteine metabolism	10	37	0.012603982858583312	E342,E702,E805,E272,E845,E391,E1013,E672,E783,E670	C00217/C00025/C05938,C00491,C00170,C05844,C00020/C00362,C00051,C02712,C02291/C00542,C00127,C02291/C00542	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$L-Cystine; L-Dicysteine; L-alpha-Diamino-beta-dithiolactic acid$5-Methylthioadenosine$5-L-Glutamyl-taurine$AMP/dGMP$Reduced glutathione$N-Acetylmethionine$L-Cystathionine/Cystathionine$Oxidized glutathione$L-Cystathionine/Cystathionine
+Glycosphingolipid metabolism	5	15	0.024283673640870515	E771,E1297,E762,E545,E800	C00836,C12144,C02934/C00319,C00031/C00221/C02336/C00267/C00962/C00795/C00137/C00984/C00159,C00128	Sphinganine$Phytosphingosine; 4-D-Hydroxysphinganine$3-Dehydrosphinganine/Sphingosine$D-Glucose/beta-D-Glucose/beta-D-Fructose; beta-Fruit sugar; beta-D-arabino-Hexulose; beta-Levulose; Fructose/alpha-D-Glucose/beta-D-Galactose/D-Tagatose; lyxo-Hexulose/myo-Inositol/alpha-D-Galactose/D-Mannose$CMP-N-acetylneuraminate
+Vitamin E metabolism	2	3	0.025712125031509957	E896,E845	CE7072,C00020/C00362	13'-carboxy-gama-tocotrienol$AMP/dGMP
+Propanoate metabolism	3	7	0.030333585412990506	E1271,E93,E845	C00725/C04593,C00256/C01013/C00186/C00184,C00020/C00362	Lipoate; Lipoic acid; alpha-Lipoic acid; Thioctic acid/(2S,3R)-3-Hydroxybutane-1,2,3-tricarboxylate; Methylisocitrate; Methylisocitric acid$D-Lactate/3-Hydroxypropanoate; 3-Hydroxypropanoic acid; 3-Hydroxypropionate; 3-Hydroxypropionic acid; Hydracrylic acid/L-Lactate/Dihydroxyacetone$AMP/dGMP
+Alanine and Aspartate Metabolism	5	16	0.03075371817494328	E342,E517,E845,E522,E532	C00217/C00025/C05938,C00327,C00020/C00362,C00062/C00792,C01045/C01042	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$L-Citrulline; 2-Amino-5-ureidovaleric acid; Citrulline$AMP/dGMP$L-Arginine/D-Arginine; D-2-Amino-5-guanidinovaleric acid$N-Formyl-L-glutamate/N-Acetyl-L-aspartate
+Purine metabolism	8	32	0.033442567851441056	E342,E247,E251,E480,E845,E1326,E246,E849	C00217/C00025/C05938,C00147,C01620/C00262,C00074,C00020/C00362,C00294,C00147,C00360	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$Adenine$/Hypoxanthine$Phosphoenolpyruvate$AMP/dGMP$Inosine$Adenine$dAMP
+Sialic acid metabolism	4	12	0.03629947063271994	E480,E800,E660,E545	C00074,C00128,C01074/C00645/C00140,C00031/C00221/C02336/C00267/C00962/C00795/C00137/C00984/C00159	Phosphoenolpyruvate$CMP-N-acetylneuraminate$N-Acetylgalactosamine; N-Acetylchondrosamine; 2-Acetamido-2-deoxygalactose; GalNAc/N-Acetyl-D-mannosamine; 2-Acetamido-2-deoxy-D-mannose/N-Acetyl-D-glucosamine$D-Glucose/beta-D-Glucose/beta-D-Fructose; beta-Fruit sugar; beta-D-arabino-Hexulose; beta-Levulose; Fructose/alpha-D-Glucose/beta-D-Galactose/D-Tagatose; lyxo-Hexulose/myo-Inositol/alpha-D-Galactose/D-Mannose
+N-Glycan Degradation	2	4	0.045794471052852705	E545,E660	C00031/C00221/C02336/C00267/C00962/C00795/C00137/C00984/C00159,C01074/C00645/C00140	D-Glucose/beta-D-Glucose/beta-D-Fructose; beta-Fruit sugar; beta-D-arabino-Hexulose; beta-Levulose; Fructose/alpha-D-Glucose/beta-D-Galactose/D-Tagatose; lyxo-Hexulose/myo-Inositol/alpha-D-Galactose/D-Mannose$N-Acetylgalactosamine; N-Acetylchondrosamine; 2-Acetamido-2-deoxygalactose; GalNAc/N-Acetyl-D-mannosamine; 2-Acetamido-2-deoxy-D-mannose/N-Acetyl-D-glucosamine
+Glutathione Metabolism	4	13	0.04705486933871103	E342,E1144,E783,E391	C00217/C00025/C05938,C03740,C00127,C00051	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$5-L-Glutamyl-L-alanine$Oxidized glutathione$Reduced glutathione
+Tryptophan metabolism	9	40	0.04839929417695992	E342,E461,E658,E845,E427,E1137,E734,E391,E460	C00217/C00025/C05938,C03824,C00643,C00020/C00362,C02220,C00780,C05648,C00051,C03824	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$2-Aminomuconate 6-semialdehyde$5-Hydroxy-L-tryptophan$AMP/dGMP$2-Aminomuconate$Serotonin$5-Hydroxy-N-formylkynurenine; 5-Hydroxy-N-formyl-L-kynurenine$Reduced glutathione$2-Aminomuconate 6-semialdehyde
+Aspartate and asparagine metabolism	10	46	0.049743719015208805	E342,E517,E845,E1144,E332,E1264,E522,E391,E783,E684	C00217/C00025/C05938,C00327,C00020/C00362,C03740,CE5586/C00315,C01029/C00612,C00062/C00792,C00051,C00127,CE1661	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$L-Citrulline; 2-Amino-5-ureidovaleric acid; Citrulline$AMP/dGMP$5-L-Glutamyl-L-alanine$dehydrospermidine/Spermidine$/N1-Acetylspermidine$L-Arginine/D-Arginine; D-2-Amino-5-guanidinovaleric acid$Reduced glutathione$Oxidized glutathione$gama-L-glutamyl-L-alpha-aminobutyrate
+Arachidonic acid metabolism	4	14	0.05663389631123435	E342,E391,E783,E845	C00217/C00025/C05938,C00051,C00127,C00020/C00362	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$Reduced glutathione$Oxidized glutathione$AMP/dGMP
+C5-Branched dibasic acid metabolism	1	1	0.06175951600705823	E207		
+Arginine and Proline Metabolism	7	31	0.06226367532140156	E342,E247,E130,E805,E517,E522,E246	C00217/C00025/C05938,C00147,,C00170,C00327,C00062/C00792,C00147	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$Adenine$$5-Methylthioadenosine$L-Citrulline; 2-Amino-5-ureidovaleric acid; Citrulline$L-Arginine/D-Arginine; D-2-Amino-5-guanidinovaleric acid$Adenine
+Pyruvate Metabolism	2	5	0.06713721536005378	E93,E391	C00256/C01013/C00186/C00184,C00051	D-Lactate/3-Hydroxypropanoate; 3-Hydroxypropanoic acid; 3-Hydroxypropionate; 3-Hydroxypropionic acid; Hydracrylic acid/L-Lactate/Dihydroxyacetone$Reduced glutathione
+Putative anti-Inflammatory metabolites formation from EPA	2	5	0.06713721536005378	E342,E391	C00217/C00025/C05938,C00051	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$Reduced glutathione
+TCA cycle	2	5	0.06713721536005378	E480,E130	C00074,	Phosphoenolpyruvate$
+Hexose phosphorylation	3	10	0.072766994370221	E545,E846,E210	C00031/C00221/C02336/C00267/C00962/C00795/C00137/C00984/C00159,C05839,C00352/C12214	D-Glucose/beta-D-Glucose/beta-D-Fructose; beta-Fruit sugar; beta-D-arabino-Hexulose; beta-Levulose; Fructose/alpha-D-Glucose/beta-D-Galactose/D-Tagatose; lyxo-Hexulose/myo-Inositol/alpha-D-Galactose/D-Mannose$cis-beta-D-Glucosyl-2-hydroxycinnamate; beta-D-Glucosyl-2-coumarinate$D-Glucosamine 6-phosphate/Aminofructose 6-phosphate; Amino-D-fructose 6-phosphate
+Drug metabolism - cytochrome P450	3	10	0.072766994370221	E841,E68,E170	,,	$$
+Glycerophospholipid metabolism	7	32	0.07310310057978321	E771,E899,E762,E545,E93,E72,E924	C00836,,C02934/C00319,C00031/C00221/C02336/C00267/C00962/C00795/C00137/C00984/C00159,C00256/C01013/C00186/C00184,,	Sphinganine$$3-Dehydrosphinganine/Sphingosine$D-Glucose/beta-D-Glucose/beta-D-Fructose; beta-Fruit sugar; beta-D-arabino-Hexulose; beta-Levulose; Fructose/alpha-D-Glucose/beta-D-Galactose/D-Tagatose; lyxo-Hexulose/myo-Inositol/alpha-D-Galactose/D-Mannose$D-Lactate/3-Hydroxypropanoate; 3-Hydroxypropanoic acid; 3-Hydroxypropionate; 3-Hydroxypropionic acid; Hydracrylic acid/L-Lactate/Dihydroxyacetone$$
+Glutamate metabolism	4	16	0.0899084110578943	E342,E783,E391,E130	C00217/C00025/C05938,C00127,C00051,	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$Oxidized glutathione$Reduced glutathione$
+Pentose phosphate pathway	4	16	0.0899084110578943	E545,E239,E845,E210	C00031/C00221/C02336/C00267/C00962/C00795/C00137/C00984/C00159,,C00020/C00362,C00352/C12214	D-Glucose/beta-D-Glucose/beta-D-Fructose; beta-Fruit sugar; beta-D-arabino-Hexulose; beta-Levulose; Fructose/alpha-D-Glucose/beta-D-Galactose/D-Tagatose; lyxo-Hexulose/myo-Inositol/alpha-D-Galactose/D-Mannose$$AMP/dGMP$D-Glucosamine 6-phosphate/Aminofructose 6-phosphate; Amino-D-fructose 6-phosphate
+Glycosphingolipid biosynthesis - globoseries	2	6	0.10301655323082094	E545,E800	C00031/C00221/C02336/C00267/C00962/C00795/C00137/C00984/C00159,C00128	D-Glucose/beta-D-Glucose/beta-D-Fructose; beta-Fruit sugar; beta-D-arabino-Hexulose; beta-Levulose; Fructose/alpha-D-Glucose/beta-D-Galactose/D-Tagatose; lyxo-Hexulose/myo-Inositol/alpha-D-Galactose/D-Mannose$CMP-N-acetylneuraminate
+Phytanic acid peroxisomal oxidation	2	6	0.10301655323082094	E845,E130	C00020/C00362,	AMP/dGMP$
+Glycolysis and Gluconeogenesis	4	18	0.13923199731115032	E480,E93,E845,E545	C00074,C00256/C01013/C00186/C00184,C00020/C00362,C00031/C00221/C02336/C00267/C00962/C00795/C00137/C00984/C00159	Phosphoenolpyruvate$D-Lactate/3-Hydroxypropanoate; 3-Hydroxypropanoic acid; 3-Hydroxypropionate; 3-Hydroxypropionic acid; Hydracrylic acid/L-Lactate/Dihydroxyacetone$AMP/dGMP$D-Glucose/beta-D-Glucose/beta-D-Fructose; beta-Fruit sugar; beta-D-arabino-Hexulose; beta-Levulose; Fructose/alpha-D-Glucose/beta-D-Galactose/D-Tagatose; lyxo-Hexulose/myo-Inositol/alpha-D-Galactose/D-Mannose
+Vitamin D3 (cholecalciferol) metabolism	1	2	0.14788673220737752	E915		
+Keratan sulfate degradation	1	2	0.14788673220737752	E660	C01074/C00645/C00140	N-Acetylgalactosamine; N-Acetylchondrosamine; 2-Acetamido-2-deoxygalactose; GalNAc/N-Acetyl-D-mannosamine; 2-Acetamido-2-deoxy-D-mannose/N-Acetyl-D-glucosamine
+Alkaloid biosynthesis II	1	2	0.14788673220737752	E845	C00020/C00362	AMP/dGMP
+Ubiquinone Biosynthesis	1	2	0.14788673220737752	E845	C00020/C00362	AMP/dGMP
+Galactose metabolism	3	13	0.1596504495420553	E545,E1257,E660	C00031/C00221/C02336/C00267/C00962/C00795/C00137/C00984/C00159,C01613,C01074/C00645/C00140	D-Glucose/beta-D-Glucose/beta-D-Fructose; beta-Fruit sugar; beta-D-arabino-Hexulose; beta-Levulose; Fructose/alpha-D-Glucose/beta-D-Galactose/D-Tagatose; lyxo-Hexulose/myo-Inositol/alpha-D-Galactose/D-Mannose$Stachyose$N-Acetylgalactosamine; N-Acetylchondrosamine; 2-Acetamido-2-deoxygalactose; GalNAc/N-Acetyl-D-mannosamine; 2-Acetamido-2-deoxy-D-mannose/N-Acetyl-D-glucosamine
+Vitamin B3 (nicotinate and nicotinamide) metabolism	3	14	0.18796739769767246	E342,E522,E845	C00217/C00025/C05938,C00062/C00792,C00020/C00362	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$L-Arginine/D-Arginine; D-2-Amino-5-guanidinovaleric acid$AMP/dGMP
+Beta-Alanine metabolism	3	14	0.18796739769767246	E342,E93,E332	C00217/C00025/C05938,C00256/C01013/C00186/C00184,CE5586/C00315	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$D-Lactate/3-Hydroxypropanoate; 3-Hydroxypropanoic acid; 3-Hydroxypropionate; 3-Hydroxypropionic acid; Hydracrylic acid/L-Lactate/Dihydroxyacetone$dehydrospermidine/Spermidine
+Glycine, serine, alanine and threonine metabolism	6	34	0.20989832787160742	E342,E643,E845,E391,E522,E93	C00217/C00025/C05938,,C00020/C00362,C00051,C00062/C00792,C00256/C01013/C00186/C00184	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$$AMP/dGMP$Reduced glutathione$L-Arginine/D-Arginine; D-2-Amino-5-guanidinovaleric acid$D-Lactate/3-Hydroxypropanoate; 3-Hydroxypropanoic acid; 3-Hydroxypropionate; 3-Hydroxypropionic acid; Hydracrylic acid/L-Lactate/Dihydroxyacetone
+Histidine metabolism	3	15	0.21132677926224688	E342,E391,E845	C00217/C00025/C05938,C00051,C00020/C00362	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$Reduced glutathione$AMP/dGMP
+Hyaluronan Metabolism	1	3	0.21225107133854298	E660	C01074/C00645/C00140	N-Acetylgalactosamine; N-Acetylchondrosamine; 2-Acetamido-2-deoxygalactose; GalNAc/N-Acetyl-D-mannosamine; 2-Acetamido-2-deoxy-D-mannose/N-Acetyl-D-glucosamine
+Di-unsaturated fatty acid beta-oxidation	1	3	0.21225107133854298	E845	C00020/C00362	AMP/dGMP
+Vitamin B2 (riboflavin) metabolism	1	3	0.21225107133854298	E845	C00020/C00362	AMP/dGMP
+Vitamin B5 - CoA biosynthesis from pantothenate	1	3	0.21225107133854298	E845	C00020/C00362	AMP/dGMP
+Glycosphingolipid biosynthesis - lactoseries	1	3	0.21225107133854298	E800	C00128	CMP-N-acetylneuraminate
+Blood Group Biosynthesis	1	3	0.21225107133854298	E800	C00128	CMP-N-acetylneuraminate
+Lipoate metabolism	1	3	0.21225107133854298	E1271	C00725/C04593	Lipoate; Lipoic acid; alpha-Lipoic acid; Thioctic acid/(2S,3R)-3-Hydroxybutane-1,2,3-tricarboxylate; Methylisocitrate; Methylisocitric acid
+Saturated fatty acids beta-oxidation	1	3	0.21225107133854298	E1152	C02990	L-Palmitoylcarnitine
+CoA Catabolism	1	3	0.21225107133854298	E845	C00020/C00362	AMP/dGMP
+Omega-3 fatty acid metabolism	1	3	0.21225107133854298	E845	C00020/C00362	AMP/dGMP
+Mono-unsaturated fatty acid beta-oxidation	1	3	0.21225107133854298	E845	C00020/C00362	AMP/dGMP
+Glycosphingolipid biosynthesis - neolactoseries	1	3	0.21225107133854298	E800	C00128	CMP-N-acetylneuraminate
+D4&E4-neuroprostanes formation	1	3	0.21225107133854298	E867		
+Heparan sulfate degradation	1	3	0.21225107133854298	E660	C01074/C00645/C00140	N-Acetylgalactosamine; N-Acetylchondrosamine; 2-Acetamido-2-deoxygalactose; GalNAc/N-Acetyl-D-mannosamine; 2-Acetamido-2-deoxy-D-mannose/N-Acetyl-D-glucosamine
+O-Glycan biosynthesis	1	3	0.21225107133854298	E800	C00128	CMP-N-acetylneuraminate
+Omega-6 fatty acid metabolism	1	3	0.21225107133854298	E845	C00020/C00362	AMP/dGMP
+N-Glycan biosynthesis	2	9	0.21754474413914798	E545,E800	C00031/C00221/C02336/C00267/C00962/C00795/C00137/C00984/C00159,C00128	D-Glucose/beta-D-Glucose/beta-D-Fructose; beta-Fruit sugar; beta-D-arabino-Hexulose; beta-Levulose; Fructose/alpha-D-Glucose/beta-D-Galactose/D-Tagatose; lyxo-Hexulose/myo-Inositol/alpha-D-Galactose/D-Mannose$CMP-N-acetylneuraminate
+Butanoate metabolism	3	16	0.23796319637005295	E342,E845,E130	C00217/C00025/C05938,C00020/C00362,	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$AMP/dGMP$
+Starch and Sucrose Metabolism	2	10	0.24451726745651625	E545,E1257	C00031/C00221/C02336/C00267/C00962/C00795/C00137/C00984/C00159,C01613	D-Glucose/beta-D-Glucose/beta-D-Fructose; beta-Fruit sugar; beta-D-arabino-Hexulose; beta-Levulose; Fructose/alpha-D-Glucose/beta-D-Galactose/D-Tagatose; lyxo-Hexulose/myo-Inositol/alpha-D-Galactose/D-Mannose$Stachyose
+Valine, leucine and isoleucine degradation	3	17	0.25552474581967904	E342,E845,E130	C00217/C00025/C05938,C00020/C00362,	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$AMP/dGMP$
+Glycosphingolipid biosynthesis - ganglioseries	1	4	0.2579615158390051	E800	C00128	CMP-N-acetylneuraminate
+Fatty acid oxidation, peroxisome	1	4	0.2579615158390051	E130		
+Keratan sulfate biosynthesis	1	4	0.2579615158390051	E800	C00128	CMP-N-acetylneuraminate
+Pyrimidine metabolism	5	31	0.2640114276111251	E342,E239,E480,E1296,E845	C00217/C00025/C05938,,C00074,C00239,C00020/C00362	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$$Phosphoenolpyruvate$dCMP$AMP/dGMP
+Bile acid biosynthesis	2	11	0.2703974455928073	E845,E915	C00020/C00362,	AMP/dGMP$
+Prostaglandin formation from arachidonate	2	12	0.2926644819763045	E391,E845	C00051,C00020/C00362	Reduced glutathione$AMP/dGMP
+Leukotriene metabolism	2	12	0.2926644819763045	E391,E845	C00051,C00020/C00362	Reduced glutathione$AMP/dGMP
+Vitamin H (biotin) metabolism	1	5	0.2936728006049912	E845	C00020/C00362	AMP/dGMP
+Vitamin B1 (thiamin) metabolism	1	6	0.3266112091420889	E845	C00020/C00362	AMP/dGMP
+Nitrogen metabolism	1	6	0.3266112091420889	E342	C00217/C00025/C05938	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde
+Urea cycle/amino group metabolism	6	44	0.341147802705655	E342,E805,E517,E1277,E332,E522	C00217/C00025/C05938,C00170,C00327,,CE5586/C00315,C00062/C00792	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$5-Methylthioadenosine$L-Citrulline; 2-Amino-5-ureidovaleric acid; Citrulline$$dehydrospermidine/Spermidine$L-Arginine/D-Arginine; D-2-Amino-5-guanidinovaleric acid
+Androgen and estrogen biosynthesis and metabolism	1	7	0.3561885555835644	E391	C00051	Reduced glutathione
+De novo fatty acid biosynthesis	1	8	0.37946391059574824	E845	C00020/C00362	AMP/dGMP
+Fatty acid activation	1	8	0.37946391059574824	E845	C00020/C00362	AMP/dGMP
+Lysine metabolism	3	26	0.39736156625493657	E342,E845,E130	C00217/C00025/C05938,C00020/C00362,	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$AMP/dGMP$
+Biopterin metabolism	1	9	0.3989580707503571	E468	C00079	L-Phenylalanine
+Vitamin A (retinol) metabolism	1	9	0.3989580707503571	E845	C00020/C00362	AMP/dGMP
+Selenoamino acid metabolism	1	9	0.3989580707503571	E845	C00020/C00362	AMP/dGMP
+Tyrosine metabolism	9	73	0.40357953113183764	E342,E548,E832,E845,E468,E1092,E391,E783,E612	C00217/C00025/C05938,,,C00020/C00362,C00079,,C00051,C00127,	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid/L-Glutamate/L-4-Hydroxyglutamate semialdehyde$$$AMP/dGMP$L-Phenylalanine$$Reduced glutathione$Oxidized glutathione$
+Fructose and mannose metabolism	1	10	0.4119821863708932	E545	C00031/C00221/C02336/C00267/C00962/C00795/C00137/C00984/C00159	D-Glucose/beta-D-Glucose/beta-D-Fructose; beta-Fruit sugar; beta-D-arabino-Hexulose; beta-Levulose; Fructose/alpha-D-Glucose/beta-D-Galactose/D-Tagatose; lyxo-Hexulose/myo-Inositol/alpha-D-Galactose/D-Mannose
+Carbon fixation	1	11	0.42282161162927484	E480	C00074	Phosphoenolpyruvate
+Phosphatidylinositol phosphate metabolism	1	13	0.43340895723048484	E545	C00031/C00221/C02336/C00267/C00962/C00795/C00137/C00984/C00159	D-Glucose/beta-D-Glucose/beta-D-Fructose; beta-Fruit sugar; beta-D-arabino-Hexulose; beta-Levulose; Fructose/alpha-D-Glucose/beta-D-Galactose/D-Tagatose; lyxo-Hexulose/myo-Inositol/alpha-D-Galactose/D-Mannose
+Linoleate metabolism	2	29	0.44475254180320983	E783,E391	C00127,C00051	Oxidized glutathione$Reduced glutathione
+Xenobiotics metabolism	1	20	0.44769347113687924	E391	C00051	Reduced glutathione
+R Group Synthesis	0	0	0.4530711704898748			
+Chondroitin sulfate degradation	0	2	0.4530711704898748			
+Squalene and cholesterol biosynthesis	0	4	0.4530711704898748			
+Glycerolipid metabolism	0	0	0.4530711704898748			
+3-oxo-10R-octadecatrienoate beta-oxidation	0	2	0.4530711704898748			
+Glycosylphosphatidylinositol(GPI)-anchor biosynthesis	0	2	0.4530711704898748			
+Parathio degradation	0	4	0.4530711704898748			
+Electron transport chain	0	0	0.4530711704898748			
+Caffeine metabolism	0	3	0.4530711704898748			
+Heparan sulfate biosynthesis	0	0	0.4530711704898748			
+Glyoxylate and Dicarboxylate Metabolism	0	5	0.4530711704898748			
+Fatty Acid Metabolism	0	2	0.4530711704898748			
+Glycosaminoglycan degradation	0	0	0.4530711704898748			
+Fatty acid oxidation	0	0	0.4530711704898748			
+ROS Detoxification	0	0	0.4530711704898748			
+Geraniol degradation	0	0	0.4530711704898748			
+Vitamin D	0	0	0.4530711704898748			
+Dynorphin metabolism	0	1	0.4530711704898748			
+Polyunsaturated fatty acid biosynthesis	0	0	0.4530711704898748			
+3-Chloroacrylic acid degradation	0	0	0.4530711704898748			
+Sphingolipid metabolism	0	0	0.4530711704898748			
+Limonene and pinene degradation	0	7	0.4530711704898748			
+Proteoglycan biosynthesis	0	2	0.4530711704898748			
+Vitamin K metabolism	0	0	0.4530711704898748			
+Porphyrin metabolism	0	8	0.4530711704898748			
+Benzoate degradation via CoA ligation	0	0	0.4530711704898748			
+Dimethyl-branched-chain fatty acid mitochondrial beta-oxidation	0	2	0.4530711704898748			
+Vitamin B6 (pyridoxine) metabolism	0	7	0.4530711704898748			
+Pentose and Glucuronate Interconversions	0	8	0.4530711704898748			
+Atrazine degradation	0	0	0.4530711704898748			
+Vitamin B12 (cyanocobalamin) metabolism	0	0	0.4530711704898748			
+Nucleotide Sugar Metabolism	0	2	0.4530711704898748			
+1- and 2-Methylnaphthalene degradation	0	0	0.4530711704898748			
+Drug metabolism - other enzymes	0	6	0.4530711704898748			
+Prostaglandin formation from dihomo gama-linoleic acid	0	3	0.4530711704898748			
+C21-steroid hormone biosynthesis and metabolism	0	7	0.4530711704898748			
+Trihydroxycoprostanoyl-CoA beta-oxidation	0	0	0.4530711704898748			
