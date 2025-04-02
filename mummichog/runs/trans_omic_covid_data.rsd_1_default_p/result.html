@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+        <html xmlns="http://www.w3.org/1999/xhtml"> 
+        <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+        <title>Mummichog Report</title> 
+
+        <style type="text/css"> 
+        body {width: 960px; padding: 10px; }
+        
+        div.colorbar {margin-bottom: 7px}
+        div.networkvisual { margin: auto; height: 600px; width: 960px; overflow: auto !important;}
+        div.svg2 { margin: auto; height: 600px; width: 960px; overflow: auto !important;}
+
+        div.stats {margin-top: 10; font-size:0.7em; color:#888;}
+
+        div.moduleline{font-size: 0.9em; font-weight: bold;
+        }
+        div.metabolites {
+            font-size: 0.7em;
+            padding-left: 15px; padding-bottom: 7px;
+        }
+        
+        footer { margin-top: 30px;    padding: 10px 0;    border-top: 1px solid #582E2E;    font-size:0.7em;    color:#888;}
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Trebuchet MS', 'Lucida Grande', Arial, Sans-Serif;
+            font-weight: bold;
+        }
+        
+        h1 { font-size: 1.4em; }
+        h2 { font-size: 1.2em; }
+        h3 { font-size: 1em; }
+        h4 { font-size: 0.9em;     padding-left: 15px; padding-bottom: 2px; margin-bottom:0px;}
+        th {
+            background: #DAFDCF;
+            font-size:0.9em;
+            text-align: left;
+            padding:5px;
+        }
+        
+        tr:nth-child(even) {background-color: #f2f2f2}
+        tr:hover {background-color: #f5f5f5}
+        
+        td {
+            font-family: Verdana, Arial, sans-serif;
+            color: black;
+            font-size:0.7em;
+            margin:10px;
+            margin-top:0px;
+            padding: 5px;
+        }
+        
+        .node {
+          stroke: #fff;
+          stroke-width: 1.5px;
+        }
+        
+        .link {
+          stroke: #999;
+          stroke-opacity: .6;
+        }
+        div.network_selection {float: left; margin-top: 6; margin-bottom: 10; font-size:0.8em;}
+        </style> 
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" charset="utf-8"></script>
+        <script src="https://shuzhao-li.github.io/mummichog.org/download/cytoscape.min.js" charset="utf-8"></script>
+        <script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-spread/1.0.9/cytoscape-spread.js"></script> 
+        <script src="js/plotly-latest.min.js"></script>
+        <script src="js/plotly-graphs.js"></script>
+        <script src="js/result.js"></script>
+        </head> 
+        <body> 
+        <h1>Mummichog Report: rsd_1_default_p</h1>
+<div id="colorbar" class="colorbar"></div>
+<div class="stats">mummichog version: 2.7.0, using metabolic model MFN_1.10.4.<br></div>
+<h2>User input data</h2>
+<p>User supplied 13175 features as reference list.We are using 601 features (p < 0.001000) as significant list. The feature level data are shown in the Manhattan plots below.</p>
+<div id="mz_user_input"></div>
+<div id="retention_time_input"></div>
+<h2>Top pathways</h2>
+<p>The reference feature list is mapped to 898 EmpiricalCompounds, significant features to 93 EmpiricalCompounds. In the table below, pathway_size is number of detected EmpiricalCompounds for each pathway; overlap_size is number of significant EmpiricalCompounds.                                Empirical p-values are estimated by permutation test. Details on EmpiricalCompounds are in 'tables/ListOfEmpiricalCompounds.tsv'.</p>
+<div class="pathwaystablly"><table><tr><th>Pathways</th>                    <th>overlap_size</th><th>pathway_size</th><th>p-value</th>                    <th>overlap_EmpiricalCompounds</th></tr><tr> <td>De novo fatty acid biosynthesis</td> <td>10</td><td>36</td><td>0.00109</td><td>E581,E545,E1453,E580,E1454,E1367,E1550,E697,E573,E707</td></tr><tr> <td>Fatty acid activation</td> <td>9</td><td>34</td><td>0.00227</td><td>E1450,E545,E1453,E1667,E1454,E1367,E1767,E1681,E697</td></tr><tr> <td>Hyaluronan Metabolism</td> <td>2</td><td>2</td><td>0.00538</td><td>E1174,E1175</td></tr><tr> <td>Tryptophan metabolism</td> <td>10</td><td>44</td><td>0.00555</td><td>E1113,E1165,E772,E801,E649,E960,E961,E861,E1782,E1072</td></tr><tr> <td>Linoleate metabolism</td> <td>9</td><td>38</td><td>0.00613</td><td>E1722,E1661,E545,E1453,E737,E1454,E86,E624,E1526</td></tr><tr> <td>Di-unsaturated fatty acid beta-oxidation</td> <td>2</td><td>3</td><td>0.01622</td><td>E1454,E1453</td></tr><tr> <td>Omega-3 fatty acid metabolism</td> <td>3</td><td>8</td><td>0.02185</td><td>E407,E545,E406</td></tr><tr> <td>Heparan sulfate degradation</td> <td>2</td><td>4</td><td>0.0284</td><td>E1174,E1175</td></tr><tr> <td>Omega-6 fatty acid metabolism</td> <td>2</td><td>4</td><td>0.0284</td><td>E1767,E573</td></tr><tr> <td>Fatty Acid Metabolism</td> <td>5</td><td>21</td><td>0.02882</td><td>E1450,E1453,E1454,E1367,E1200</td></tr><tr> <td>Carbon fixation</td> <td>1</td><td>1</td><td>0.04932</td><td>E613</td></tr></table></div>
+<div id="pathwayBarPlot"></div>
+<h2>Top modules</h2>
+<p>Network modules may capture concerted metabolite activities that are missed by predefined pathways.         Use pull-down menus to visualize modules and the activity network, which tries to combine the results of         pathway/module analyses. The visualization requires interenet connection.</p>
+<div id="network_selection" class="network_selection">Showing
+        <select id="nmodule_select" onchange="updateDrawing();">
+        <option>Module 1</option><option>Module 2</option><option>Module 3</option>  <option>Activity network</option>
+                   </select>
+                    Node size <select id="nsize_select"  onchange="updateDrawing();">
+                      <option value=16>Medium</option>
+                      <option value=8>Small</option>
+                      <option value=32>Large</option>
+                    </select>
+                    Visual style <select id="vstyle_select"  onchange="updateDrawing();">
+                      <option value=0>Drag</option>
+                      <option value=1>Force</option>
+                    </select>
+                    </div>
+<div id="networkvisual" class="networkvisual"></div>
+<div class="modulestablly"><div class="moduleline">module_1, p=0.00124, 14 metabolites</div><div class="metabolites">Stearidonic acid; 6,9,12,15-Octadecatetraenoic acid; (6Z,9Z,12Z,15Z)-Octadecatetraenoic acid, (5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid; (5Z,8Z,11Z,14Z,17Z)-Eicosapentaenoic acid; Eicosapentaenoic acid; 5,8,11,14,17-Icosapentaenoic acid; (5Z,8Z,11Z,14Z,17Z)-Eicosapentaenoate, (8Z,11Z,14Z)-Icosatrienoic acid; Dihomo-gamma-linolenic acid; (Z,Z,Z)-8,11,14-Eicosatrienoic acid; (Z,Z,Z)-8,11,14-Icosatrienoic acid; (Z,Z,Z)-8,11,14-Eicosatrienoate; (Z,Z,Z)-8,11,14-Icosatrienoate; 8,11,14-Eicosatrienoate; 8,11,14-Icosatrienoate, (9Z,11E)-(13S)-13-Hydroperoxyoctadeca-9,11-dienoic acid; (9Z,11E)-(13S)-13-Hydroperoxyoctadeca-9,11-dienoate; 13(S)-HPODE; 13S-Hydroperoxy-9Z,11E-octadecadienoic acid, (4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid; 4,7,10,13,16,19-Docosahexaenoic acid; Docosahexaenoic acid, (9Z)-Octadecenoic acid; (Z)-Octadec-9-enoic acid; Oleate; Oleic acid, 9(S)-HPODE; 9(S)-HPOD; (10E,12Z)-(9S)-9-Hydroperoxyoctadeca-10,12-dienoic acid, (9Z,12Z,15Z)-Octadecatrienoic acid; alpha-Linolenic acid; 9,12,15-Octadecatrienoic acid; Linolenate; alpha-Linolenate, linoleic acid (all cis C18:2) n-6, 9(10)-EpOME; (9R,10S)-(12Z)-9,10-Epoxyoctadecenoic acid, 12(13)-EpOME; (12R,13S)-(9Z)-12,13-Epoxyoctadecenoic acid, Hexadecanoate (n-C16:0), (6Z,9Z,12Z)-Octadecatrienoic acid; 6,9,12-Octadecatrienoic acid; gamma-Linolenic acid; Gamolenic acid, arachidonic acid</div><div class="moduleline">module_2, p=0.00124, 9 metabolites</div><div class="metabolites">Stearidonic acid; 6,9,12,15-Octadecatetraenoic acid; (6Z,9Z,12Z,15Z)-Octadecatetraenoic acid, (5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid; (5Z,8Z,11Z,14Z,17Z)-Eicosapentaenoic acid; Eicosapentaenoic acid; 5,8,11,14,17-Icosapentaenoic acid; (5Z,8Z,11Z,14Z,17Z)-Eicosapentaenoate, (8Z,11Z,14Z)-Icosatrienoic acid; Dihomo-gamma-linolenic acid; (Z,Z,Z)-8,11,14-Eicosatrienoic acid; (Z,Z,Z)-8,11,14-Icosatrienoic acid; (Z,Z,Z)-8,11,14-Eicosatrienoate; (Z,Z,Z)-8,11,14-Icosatrienoate; 8,11,14-Eicosatrienoate; 8,11,14-Icosatrienoate, (4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid; 4,7,10,13,16,19-Docosahexaenoic acid; Docosahexaenoic acid, (9Z)-Octadecenoic acid; (Z)-Octadec-9-enoic acid; Oleate; Oleic acid, (9Z,12Z,15Z)-Octadecatrienoic acid; alpha-Linolenic acid; 9,12,15-Octadecatrienoic acid; Linolenate; alpha-Linolenate, Hexadecanoate (n-C16:0), (6Z,9Z,12Z)-Octadecatrienoic acid; 6,9,12-Octadecatrienoic acid; gamma-Linolenic acid; Gamolenic acid, arachidonic acid</div><div class="moduleline">module_3, p=0.04203, 5 metabolites</div><div class="metabolites">3-Methoxy-4-hydroxyphenylglycolaldehyde, 5-Hydroxykynurenamine, Indole-3-acetaldehyde, 4-Hydroxyphenylacetaldehyde, Citalopram aldehyde</div>
+</div>
+<h2>EmpiricalCompounds favored by above analyses</h2>
+<p>An EmpiricalCompound is a computational unit for a tentative metabolite. It can group multiple ions,                     and be any of the isobaric/isomeric species. This table contains EmpiricalCompounds prioritized by pathway/module analysis.</p>
+<div class="metabolitestablly"><table><tr><th>EmpiricalCompound</th><th>Input m/z</th>                    <th>Retention time</th><th>ion</th><th>mz_diff</th><th>Statistic</th>                    <th>Significant</th></tr><tr > <td>E86</td> <td colspan="2">Best guess: CE6506, </td><td colspan="4">CE2006, CE6506</td></tr><tr> <td> </td> <td>157.122541708232</td> <td>586.599365234375</td><td>M+H[1+]</td><td>0.0002</td><td>4.43</td><td>yes</td></tr><tr > <td>E1200</td> <td colspan="2">Best guess: ttdcea, tetradecenoate (n-C14:1)</td><td colspan="4">ttdcea</td></tr><tr> <td> </td> <td>248.175397590225</td> <td>219.975036621094</td><td>M+Na[1+]</td><td>0.0007</td><td>4.23</td><td>yes</td></tr><tr > <td>E772</td> <td colspan="2">Best guess: CE3087, beta-carboline</td><td colspan="4">CE3087</td></tr><tr> <td> </td> <td>191.058035336551</td> <td>150.142196655273</td><td>M+Na[1+]</td><td>0.0</td><td>4.42</td><td>yes</td></tr><tr > <td>E545</td> <td colspan="2">Best guess: C06427, (9Z,12Z,15Z)-Octadecatrienoic acid</td><td colspan="4">C06426, C06427</td></tr><tr> <td> </td> <td>151.111966385678</td> <td>586.6015625</td><td>M+H+Na[2+]</td><td>0.0014</td><td>2.23</td><td>no</td></tr><tr> <td> </td> <td>279.231850212702</td> <td>575.772979736328</td><td>M+H[1+]</td><td>-0.0</td><td>5.04</td><td>yes</td></tr><tr> <td> </td> <td>279.231840167311</td> <td>599.998596191406</td><td>M+H[1+]</td><td>-0.0</td><td>0.36</td><td>no</td></tr><tr> <td> </td> <td>280.235186162382</td> <td>600.087219238281</td><td>M(C13)+H[1+]</td><td>-0.0001</td><td>-0.42</td><td>no</td></tr><tr> <td> </td> <td>280.235203322096</td> <td>575.659210205078</td><td>M(C13)+H[1+]</td><td>-0.0001</td><td>5.0</td><td>yes</td></tr><tr> <td> </td> <td>301.211306570391</td> <td>596.014038085938</td><td>M+Na[1+]</td><td>-0.0026</td><td>2.58</td><td>no</td></tr><tr> <td> </td> <td>301.213733870361</td> <td>575.727966308594</td><td>M+Na[1+]</td><td>-0.0001</td><td>5.2</td><td>yes</td></tr><tr> <td> </td> <td>347.216486028782</td> <td>592.975830078125</td><td>M+HCOONa[1+]</td><td>-0.0028</td><td>2.47</td><td>no</td></tr><tr > <td>E1767</td> <td colspan="2">Best guess: tetpent3, tetracosapentaenoic acid, n-3</td><td colspan="4">tetpent6, CE4839, tetpent3</td></tr><tr> <td> </td> <td>380.269723856415</td> <td>655.81494140625</td><td>M+Na[1+]</td><td>0.0011</td><td>-5.08</td><td>yes</td></tr><tr > <td>E1782</td> <td colspan="2">Best guess: CE3140, </td><td colspan="4">CE3140</td></tr><tr> <td> </td> <td>365.135846228896</td> <td>506.901290893555</td><td>M[1+]</td><td>0.0015</td><td>4.77</td><td>yes</td></tr><tr> <td> </td> <td>366.139263154277</td> <td>506.887359619141</td><td>M+H[1+]</td><td>-0.0029</td><td>4.9</td><td>yes</td></tr><tr> <td> </td> <td>367.142013900462</td> <td>506.89567565918</td><td>M(C13)+H[1+]</td><td>-0.0036</td><td>3.65</td><td>no</td></tr><tr > <td>E1526</td> <td colspan="2">Best guess: C14825, 9(10)-EpOME</td><td colspan="4">C14762, C14826, C14825</td></tr><tr> <td> </td> <td>297.240370692413</td> <td>565.913665771484</td><td>M+H[1+]</td><td>-0.002</td><td>3.56</td><td>no</td></tr><tr> <td> </td> <td>297.242293135707</td> <td>581.530212402344</td><td>M+H[1+]</td><td>-0.0001</td><td>0.43</td><td>no</td></tr><tr> <td> </td> <td>297.240178075538</td> <td>550.10107421875</td><td>M+H[1+]</td><td>-0.0022</td><td>4.28</td><td>yes</td></tr><tr > <td>E1113</td> <td colspan="2">Best guess: C05647, Formyl-5-hydroxykynurenamine</td><td colspan="4">C00328, C05647</td></tr><tr> <td> </td> <td>209.092335827334</td> <td>150.116195678711</td><td>M+H[1+]</td><td>0.0003</td><td>4.53</td><td>yes</td></tr><tr> <td> </td> <td>210.095654770879</td> <td>150.064407348633</td><td>M(C13)+H[1+]</td><td>0.0002</td><td>5.02</td><td>yes</td></tr><tr> <td> </td> <td>210.095995850273</td> <td>197.113311767578</td><td>M(C13)+H[1+]</td><td>0.0005</td><td>-0.67</td><td>no</td></tr><tr> <td> </td> <td>231.074264978289</td> <td>150.06364440918</td><td>M+Na[1+]</td><td>0.0002</td><td>3.96</td><td>no</td></tr><tr > <td>E573</td> <td colspan="2">Best guess: C00219, arachidonic acid</td><td colspan="4">C00219</td></tr><tr> <td> </td> <td>153.127623896259</td> <td>593.69873046875</td><td>M+2H[2+]</td><td>0.0002</td><td>2.14</td><td>no</td></tr><tr> <td> </td> <td>305.247407114977</td> <td>584.508117675781</td><td>M+H[1+]</td><td>-0.0001</td><td>2.6</td><td>no</td></tr><tr> <td> </td> <td>305.245117878168</td> <td>599.190246582031</td><td>M+H[1+]</td><td>-0.0024</td><td>4.5</td><td>yes</td></tr><tr> <td> </td> <td>306.250718700013</td> <td>584.597503662109</td><td>M(C13)+H[1+]</td><td>-0.0002</td><td>2.5</td><td>no</td></tr><tr> <td> </td> <td>306.248518715116</td> <td>599.194122314453</td><td>M(C13)+H[1+]</td><td>-0.0024</td><td>4.56</td><td>yes</td></tr><tr> <td> </td> <td>327.229294988035</td> <td>584.809265136719</td><td>M+Na[1+]</td><td>-0.0002</td><td>2.1</td><td>no</td></tr><tr > <td>E1450</td> <td colspan="2">Best guess: ocdcea, octadecenoate (n-C18:1)</td><td colspan="4">vacc, ocdcea</td></tr><tr> <td> </td> <td>281.247441563248</td> <td>561.803192138672</td><td>M[1+]</td><td>-0.0001</td><td>0.95</td><td>no</td></tr><tr> <td> </td> <td>281.247474350602</td> <td>586.8388671875</td><td>M[1+]</td><td>-0.0</td><td>4.75</td><td>yes</td></tr><tr> <td> </td> <td>304.235105116206</td> <td>573.516815185547</td><td>M+Na[1+]</td><td>-0.0022</td><td>5.04</td><td>yes</td></tr><tr > <td>E581</td> <td colspan="2">Best guess: C00712, (9Z)-Octadecenoic acid</td><td colspan="4">C00712</td></tr><tr> <td> </td> <td>153.127623896259</td> <td>593.69873046875</td><td>M+H+Na[2+]</td><td>0.0014</td><td>2.14</td><td>no</td></tr><tr> <td> </td> <td>283.263133978983</td> <td>599.122924804688</td><td>M+H[1+]</td><td>-0.0</td><td>4.8</td><td>yes</td></tr><tr> <td> </td> <td>284.266569147241</td> <td>599.235290527344</td><td>M(C13)+H[1+]</td><td>-0.0</td><td>4.57</td><td>yes</td></tr><tr> <td> </td> <td>305.247407114977</td> <td>584.508117675781</td><td>M+Na[1+]</td><td>0.0022</td><td>2.6</td><td>no</td></tr><tr> <td> </td> <td>305.245117878168</td> <td>599.190246582031</td><td>M+Na[1+]</td><td>-0.0001</td><td>4.5</td><td>yes</td></tr><tr > <td>E1453</td> <td colspan="2">Best guess: C01595, linoleic acid (all cis C18:2) n-6</td><td colspan="4">C01595</td></tr><tr> <td> </td> <td>281.24748492474</td> <td>540.897094726562</td><td>M+H[1+]</td><td>0.0</td><td>4.51</td><td>yes</td></tr><tr> <td> </td> <td>282.25084255921</td> <td>541.053283691406</td><td>M(C13)+H[1+]</td><td>-0.0</td><td>4.49</td><td>yes</td></tr><tr > <td>E580</td> <td colspan="2">Best guess: C00712, (9Z)-Octadecenoic acid</td><td colspan="4">C00712</td></tr><tr> <td> </td> <td>283.263162519933</td> <td>551.160522460938</td><td>M+H[1+]</td><td>-0.0</td><td>5.1</td><td>yes</td></tr><tr> <td> </td> <td>284.266473053491</td> <td>551.173065185547</td><td>M(C13)+H[1+]</td><td>-0.0001</td><td>4.95</td><td>yes</td></tr><tr> <td> </td> <td>305.247366405919</td> <td>545.32373046875</td><td>M+Na[1+]</td><td>0.0022</td><td>2.93</td><td>no</td></tr><tr> <td> </td> <td>351.252739251705</td> <td>545.172485351562</td><td>M+HCOONa[1+]</td><td>0.0022</td><td>3.84</td><td>no</td></tr><tr > <td>E1454</td> <td colspan="2">Best guess: C01595, linoleic acid (all cis C18:2) n-6</td><td colspan="4">C01595</td></tr><tr> <td> </td> <td>281.247441563248</td> <td>561.803192138672</td><td>M+H[1+]</td><td>-0.0</td><td>0.95</td><td>no</td></tr><tr> <td> </td> <td>281.247474350602</td> <td>586.8388671875</td><td>M+H[1+]</td><td>-0.0</td><td>4.75</td><td>yes</td></tr><tr> <td> </td> <td>282.251011948019</td> <td>586.845764160156</td><td>M(C13)+H[1+]</td><td>0.0001</td><td>4.19</td><td>no</td></tr><tr> <td> </td> <td>303.229378006253</td> <td>586.596038818359</td><td>M+Na[1+]</td><td>-0.0001</td><td>5.13</td><td>yes</td></tr><tr> <td> </td> <td>303.231754710146</td> <td>573.497619628906</td><td>M+Na[1+]</td><td>0.0023</td><td>4.67</td><td>yes</td></tr><tr > <td>E697</td> <td colspan="2">Best guess: C03242, (8Z,11Z,14Z)-Icosatrienoic acid</td><td colspan="4">C03242</td></tr><tr> <td> </td> <td>165.127666884009</td> <td>586.578552246094</td><td>M+H+Na[2+]</td><td>0.0014</td><td>5.67</td><td>yes</td></tr><tr> <td> </td> <td>165.127682841465</td> <td>606.601257324219</td><td>M+H+Na[2+]</td><td>0.0015</td><td>-0.37</td><td>no</td></tr><tr> <td> </td> <td>307.263094212916</td> <td>593.441772460938</td><td>M+H[1+]</td><td>-0.0001</td><td>3.96</td><td>no</td></tr><tr> <td> </td> <td>308.266457497957</td> <td>593.245880126953</td><td>M(C13)+H[1+]</td><td>-0.0001</td><td>3.92</td><td>no</td></tr><tr> <td> </td> <td>329.242706255356</td> <td>613.837768554688</td><td>M+Na[1+]</td><td>-0.0025</td><td>-0.93</td><td>no</td></tr><tr> <td> </td> <td>329.246641036561</td> <td>583.083984375</td><td>M+Na[1+]</td><td>0.0015</td><td>4.14</td><td>no</td></tr><tr > <td>E861</td> <td colspan="2">Best guess: C05638, 5-Hydroxykynurenamine</td><td colspan="4">C05638</td></tr><tr> <td> </td> <td>181.097452755499</td> <td>252.01921081543</td><td>M+H[1+]</td><td>0.0003</td><td>4.54</td><td>yes</td></tr><tr > <td>E1722</td> <td colspan="2">Best guess: CE6504, </td><td colspan="4">CE6504</td></tr><tr> <td> </td> <td>343.213661670909</td> <td>599.365417480469</td><td>M[1+]</td><td>0.0021</td><td>3.2</td><td>no</td></tr><tr> <td> </td> <td>366.203125297972</td> <td>586.666198730469</td><td>M+Na[1+]</td><td>0.0018</td><td>4.55</td><td>yes</td></tr><tr > <td>E801</td> <td colspan="2">Best guess: C02693, Indole-3-acetamide</td><td colspan="4">C02693</td></tr><tr> <td> </td> <td>175.087302271925</td> <td>125.176258087158</td><td>M+H[1+]</td><td>0.0007</td><td>4.49</td><td>yes</td></tr><tr > <td>E960</td> <td colspan="2">Best guess: C16596, 5-Phenyl-1,3-oxazinane-2,4-dione</td><td colspan="4">C05635, C16596</td></tr><tr> <td> </td> <td>191.058035336551</td> <td>150.142196655273</td><td>M[1+]</td><td>0.0004</td><td>4.42</td><td>yes</td></tr><tr> <td> </td> <td>192.065824899917</td> <td>150.101318359375</td><td>M+H[1+]</td><td>0.0003</td><td>5.1</td><td>yes</td></tr><tr> <td> </td> <td>192.06721443123</td> <td>196.675315856934</td><td>M+H[1+]</td><td>0.0017</td><td>0.39</td><td>no</td></tr><tr> <td> </td> <td>193.06904401198</td> <td>150.108978271484</td><td>M(C13)+H[1+]</td><td>0.0002</td><td>4.82</td><td>yes</td></tr><tr> <td> </td> <td>193.069193539854</td> <td>205.232818603516</td><td>M(C13)+H[1+]</td><td>0.0003</td><td>2.22</td><td>no</td></tr><tr> <td> </td> <td>193.068543471751</td> <td>86.9109954833984</td><td>M(C13)+H[1+]</td><td>-0.0003</td><td>6.11</td><td>yes</td></tr><tr > <td>E961</td> <td colspan="2">Best guess: C16596, 5-Phenyl-1,3-oxazinane-2,4-dione</td><td colspan="4">C05635, C16596</td></tr><tr> <td> </td> <td>192.065855343163</td> <td>319.305313110352</td><td>M+H[1+]</td><td>0.0004</td><td>5.54</td><td>yes</td></tr><tr> <td> </td> <td>193.069271825601</td> <td>319.299987792969</td><td>M(C13)+H[1+]</td><td>0.0004</td><td>5.15</td><td>yes</td></tr><tr > <td>E707</td> <td colspan="2">Best guess: C06429, (4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid</td><td colspan="4">C06429</td></tr><tr> <td> </td> <td>165.127666884009</td> <td>586.578552246094</td><td>M+2H[2+]</td><td>0.0003</td><td>5.67</td><td>yes</td></tr><tr> <td> </td> <td>329.246641036561</td> <td>583.083984375</td><td>M+H[1+]</td><td>-0.0008</td><td>4.14</td><td>no</td></tr><tr> <td> </td> <td>330.248401418522</td> <td>582.757995605469</td><td>M(C13)+H[1+]</td><td>-0.0025</td><td>3.77</td><td>no</td></tr><tr> <td> </td> <td>351.229037141014</td> <td>582.718139648438</td><td>M+Na[1+]</td><td>-0.0004</td><td>4.09</td><td>no</td></tr><tr > <td>E1367</td> <td colspan="2">Best guess: C00249, Hexadecanoate (n-C16:0)</td><td colspan="4">C00249</td></tr><tr> <td> </td> <td>279.231850212702</td> <td>575.772979736328</td><td>M+Na[1+]</td><td>0.0024</td><td>5.04</td><td>yes</td></tr><tr > <td>E1550</td> <td colspan="2">Best guess: CE5013, </td><td colspan="4">CE5932, C02075, C06428, CE5013</td></tr><tr> <td> </td> <td>303.229378006253</td> <td>586.596038818359</td><td>M+H[1+]</td><td>-0.0025</td><td>5.13</td><td>yes</td></tr><tr> <td> </td> <td>303.231754710146</td> <td>573.497619628906</td><td>M+H[1+]</td><td>-0.0001</td><td>4.67</td><td>yes</td></tr><tr> <td> </td> <td>304.232801958834</td> <td>586.593627929688</td><td>M(C13)+H[1+]</td><td>-0.0025</td><td>5.13</td><td>yes</td></tr><tr> <td> </td> <td>304.235105116206</td> <td>573.516815185547</td><td>M(C13)+H[1+]</td><td>-0.0002</td><td>5.04</td><td>yes</td></tr><tr > <td>E876</td> <td colspan="2">Best guess: C05583, 3-Methoxy-4-hydroxyphenylglycolaldehyde</td><td colspan="4">C05583, C05582</td></tr><tr> <td> </td> <td>205.047538204785</td> <td>204.09765625</td><td>M+Na[1+]</td><td>0.0004</td><td>5.46</td><td>yes</td></tr><tr > <td>E613</td> <td colspan="2">Best guess: C00402, D-Aspartate</td><td colspan="4">C00049, C00402</td></tr><tr> <td> </td> <td>156.027042431617</td> <td>43.6677360534668</td><td>M+Na[1+]</td><td>0.0003</td><td>-4.31</td><td>yes</td></tr><tr > <td>E1165</td> <td colspan="2">Best guess: C00643, 5-Hydroxy-L-tryptophan</td><td colspan="4">C00643</td></tr><tr> <td> </td> <td>221.092296875905</td> <td>125.007293701172</td><td>M+H[1+]</td><td>0.0002</td><td>5.19</td><td>yes</td></tr><tr> <td> </td> <td>222.095609268567</td> <td>124.808631896973</td><td>M(C13)+H[1+]</td><td>0.0001</td><td>5.37</td><td>yes</td></tr><tr > <td>E1661</td> <td colspan="2">Best guess: CE5922, </td><td colspan="4">CE5922</td></tr><tr> <td> </td> <td>327.216853288252</td> <td>583.815490722656</td><td>M[1+]</td><td>0.0003</td><td>0.65</td><td>no</td></tr><tr> <td> </td> <td>328.223916159571</td> <td>595.807586669922</td><td>M+H[1+]</td><td>-0.0005</td><td>2.3</td><td>no</td></tr><tr> <td> </td> <td>329.230120042288</td> <td>594.378753662109</td><td>M(C13)+H[1+]</td><td>0.0023</td><td>4.62</td><td>yes</td></tr><tr > <td>E1667</td> <td colspan="2">Best guess: dcsptn1, docosa-4,7,10,13,16-pentaenoic acid (n-6)</td><td colspan="4">clpnd, dcsptn1</td></tr><tr> <td> </td> <td>331.260704315686</td> <td>603.718200683594</td><td>M(C13)+H[1+]</td><td>0.002</td><td>4.41</td><td>yes</td></tr><tr> <td> </td> <td>352.238079799002</td> <td>618.480041503906</td><td>M+Na[1+]</td><td>0.0007</td><td>-0.37</td><td>no</td></tr><tr > <td>E737</td> <td colspan="2">Best guess: CE5528, </td><td colspan="4">CE5528</td></tr><tr> <td> </td> <td>333.205983971989</td> <td>494.589172363281</td><td>M+Na[1+]</td><td>0.0023</td><td>4.21</td><td>yes</td></tr><tr > <td>E624</td> <td colspan="2">Best guess: C14827, 9(S)-HPODE</td><td colspan="4">C04717, C14827</td></tr><tr> <td> </td> <td>157.122548989143</td> <td>606.234100341797</td><td>M+2H[2+]</td><td>0.0002</td><td>-0.19</td><td>no</td></tr><tr> <td> </td> <td>157.122541708232</td> <td>586.599365234375</td><td>M+2H[2+]</td><td>0.0002</td><td>4.43</td><td>yes</td></tr><tr> <td> </td> <td>335.221404050117</td> <td>593.314880371094</td><td>M+Na[1+]</td><td>0.002</td><td>2.17</td><td>no</td></tr><tr> <td> </td> <td>381.228123196098</td> <td>614.352416992188</td><td>M+HCOONa[1+]</td><td>0.0033</td><td>0.79</td><td>no</td></tr><tr > <td>E387</td> <td colspan="2">Best guess: C03765, 4-Hydroxyphenylacetaldehyde</td><td colspan="4">C07086, C03765</td></tr><tr> <td> </td> <td>137.059789580567</td> <td>203.955535888672</td><td>M+H[1+]</td><td>0.0001</td><td>4.92</td><td>yes</td></tr><tr> <td> </td> <td>205.047538204785</td> <td>204.09765625</td><td>M+HCOONa[1+]</td><td>0.0005</td><td>5.46</td><td>yes</td></tr><tr > <td>E1174</td> <td colspan="2">Best guess: C00140, N-Acetyl-D-glucosamine</td><td colspan="4">C01074, C00645, C00140</td></tr><tr> <td> </td> <td>244.079111941495</td> <td>44.3915042877197</td><td>M+Na[1+]</td><td>-0.0001</td><td>4.46</td><td>yes</td></tr><tr > <td>E512</td> <td colspan="2">Best guess: C16612, Citalopram aldehyde</td><td colspan="4">C16612</td></tr><tr> <td> </td> <td>295.099123106004</td> <td>506.949203491211</td><td>M[1+]</td><td>-0.0012</td><td>-0.07</td><td>no</td></tr><tr> <td> </td> <td>297.111639130292</td> <td>491.028686523438</td><td>M(C13)+H[1+]</td><td>0.0001</td><td>2.24</td><td>no</td></tr><tr> <td> </td> <td>318.087599925843</td> <td>490.478164672852</td><td>M+Na[1+]</td><td>-0.0026</td><td>4.34</td><td>yes</td></tr><tr > <td>E1175</td> <td colspan="2">Best guess: C00140, N-Acetyl-D-glucosamine</td><td colspan="4">C01074, C00645, C00140</td></tr><tr> <td> </td> <td>222.095609268567</td> <td>124.808631896973</td><td>M+H[1+]</td><td>-0.0016</td><td>5.37</td><td>yes</td></tr><tr > <td>E649</td> <td colspan="2">Best guess: C00637, Indole-3-acetaldehyde</td><td colspan="4">C00637</td></tr><tr> <td> </td> <td>160.075779731718</td> <td>291.525726318359</td><td>M+H[1+]</td><td>0.0001</td><td>5.33</td><td>yes</td></tr><tr> <td> </td> <td>228.063300701859</td> <td>291.522705078125</td><td>M+HCOONa[1+]</td><td>0.0002</td><td>5.39</td><td>yes</td></tr><tr > <td>E1681</td> <td colspan="2">Best guess: adrn, adrenic acid</td><td colspan="4">adrn</td></tr><tr> <td> </td> <td>354.250560300882</td> <td>478.966949462891</td><td>M+Na[1+]</td><td>-0.0024</td><td>0.73</td><td>no</td></tr><tr> <td> </td> <td>400.255935599326</td> <td>493.35954284668</td><td>M+HCOONa[1+]</td><td>-0.0024</td><td>5.53</td><td>yes</td></tr><tr > <td>E1072</td> <td colspan="2">Best guess: C05660, 5-Methoxyindoleacetate</td><td colspan="4">C05660</td></tr><tr> <td> </td> <td>206.081448760018</td> <td>291.506881713867</td><td>M+H[1+]</td><td>0.0003</td><td>5.61</td><td>yes</td></tr><tr> <td> </td> <td>207.083956827672</td> <td>291.516845703125</td><td>M(C13)+H[1+]</td><td>-0.0006</td><td>5.62</td><td>yes</td></tr><tr> <td> </td> <td>228.063300701859</td> <td>291.522705078125</td><td>M+Na[1+]</td><td>0.0001</td><td>5.39</td><td>yes</td></tr><tr > <td>E407</td> <td colspan="2">Best guess: C16300, Stearidonic acid</td><td colspan="4">C16300</td></tr><tr> <td> </td> <td>277.216210283424</td> <td>597.653289794922</td><td>M+H[1+]</td><td>0.0</td><td>2.39</td><td>no</td></tr><tr> <td> </td> <td>277.215847595242</td> <td>579.371398925781</td><td>M+H[1+]</td><td>-0.0003</td><td>2.35</td><td>no</td></tr><tr> <td> </td> <td>277.216188807366</td> <td>563.66650390625</td><td>M+H[1+]</td><td>0.0</td><td>4.27</td><td>yes</td></tr><tr> <td> </td> <td>345.200384585725</td> <td>583.793334960938</td><td>M+HCOONa[1+]</td><td>-0.0032</td><td>0.8</td><td>no</td></tr><tr > <td>E406</td> <td colspan="2">Best guess: C16300, Stearidonic acid</td><td colspan="4">C16300</td></tr><tr> <td> </td> <td>277.216204375846</td> <td>535.445434570312</td><td>M+H[1+]</td><td>0.0</td><td>1.77</td><td>no</td></tr><tr> <td> </td> <td>277.216307361831</td> <td>518.079803466797</td><td>M+H[1+]</td><td>0.0001</td><td>4.41</td><td>yes</td></tr><tr> <td> </td> <td>278.219539245843</td> <td>535.447998046875</td><td>M(C13)+H[1+]</td><td>-0.0</td><td>2.07</td><td>no</td></tr></table></div>
+<h2>More data</h2>
+<p class="moreinformation">Full data tables from pathway analysis, module analysis and activity network are stored in the 'tables/' directory. 
+            The tsv files can be imported into a spreadsheet program, e.g. MS Excel.
+            Under the 'figures/network_modules/' directory are files intended for Cytoscape (cytoscape.org) visualization. Please refer to Cytoscape's guides for details.
+            Details of this run are recorded in file mummichog.log.txt.
+            </p>
+<footer>Mummichog algorithms are described in Li et al. Predicting Network Activity from High Throughput Metabolomics. PLoS Computational Biology (2013); doi:10.1371/journal.pcbi.1003123.        This software is provided as is, without warranty of any kind. Visit <a href="http://mummichog.org">http://mummichog.org</a> for updates.
+        </footer>
+
+        <script type="text/javascript" charset="utf-8">
+        var nodes = [ [{name:"Stearidonic acid", group:16}, {name:"(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", group:17}, {name:"(8Z,11Z,14Z)-Icosatrienoic acid", group:19}, {name:"(9Z,11E)-(13S)-13-Hydroperoxyoctadeca-9,11-dienoic acid", group:16}, {name:"(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", group:19}, {name:"(9Z)-Octadecenoic acid", group:17}, {name:"9(S)-HPODE", group:16}, {name:"(9Z,12Z,15Z)-Octadecatrienoic acid", group:17}, {name:"linoleic acid (all cis C18:2) n-6", group:17}, {name:"9(10)-EpOME", group:16}, {name:"12(13)-EpOME", group:16}, {name:"Hexadecanoate (n-C16:0)", group:17}, {name:"(6Z,9Z,12Z)-Octadecatrienoic acid", group:18}, {name:"arachidonic acid", group:17}, ], [{name:"Stearidonic acid", group:16}, {name:"(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", group:17}, {name:"(8Z,11Z,14Z)-Icosatrienoic acid", group:19}, {name:"(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", group:19}, {name:"(9Z)-Octadecenoic acid", group:17}, {name:"(9Z,12Z,15Z)-Octadecatrienoic acid", group:17}, {name:"Hexadecanoate (n-C16:0)", group:17}, {name:"(6Z,9Z,12Z)-Octadecatrienoic acid", group:18}, {name:"arachidonic acid", group:17}, ], [{name:"3-Methoxy-4-hydroxyphenylglycolaldehyde", group:18}, {name:"5-Hydroxykynurenamine", group:17}, {name:"Indole-3-acetaldehyde", group:18}, {name:"4-Hydroxyphenylacetaldehyde", group:18}, {name:"Citalopram aldehyde", group:16}, ], [{name:"Stearidonic acid", group:16}, {name:"(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", group:17}, {name:"(8Z,11Z,14Z)-Icosatrienoic acid", group:19}, {name:"(9Z,11E)-(13S)-13-Hydroperoxyoctadeca-9,11-dienoic acid", group:16}, {name:"(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", group:19}, {name:"(9Z)-Octadecenoic acid", group:17}, {name:"9(S)-HPODE", group:16}, {name:"(9Z,12Z,15Z)-Octadecatrienoic acid", group:17}, {name:"linoleic acid (all cis C18:2) n-6", group:17}, {name:"9(10)-EpOME", group:16}, {name:"12(13)-EpOME", group:16}, {name:"Hexadecanoate (n-C16:0)", group:17}, {name:"(6Z,9Z,12Z)-Octadecatrienoic acid", group:18}, {name:"arachidonic acid", group:17}, ], ];
+
+        var links = [[{source:0, target:7}, {source:1, target:2}, {source:1, target:4}, {source:1, target:12}, {source:1, target:7}, {source:1, target:11}, {source:1, target:8}, {source:1, target:5}, {source:1, target:13}, {source:2, target:4}, {source:2, target:8}, {source:2, target:11}, {source:2, target:12}, {source:2, target:13}, {source:2, target:5}, {source:2, target:7}, {source:3, target:8}, {source:4, target:7}, {source:4, target:8}, {source:4, target:13}, {source:4, target:5}, {source:4, target:11}, {source:4, target:12}, {source:5, target:12}, {source:5, target:7}, {source:5, target:11}, {source:5, target:8}, {source:5, target:13}, {source:6, target:8}, {source:7, target:12}, {source:7, target:13}, {source:7, target:8}, {source:7, target:11}, {source:8, target:12}, {source:8, target:11}, {source:8, target:9}, {source:8, target:10}, {source:8, target:13}, {source:11, target:12}, {source:11, target:13}, {source:12, target:13}, ], [{source:0, target:5}, {source:1, target:2}, {source:1, target:3}, {source:1, target:7}, {source:1, target:5}, {source:1, target:6}, {source:1, target:4}, {source:1, target:8}, {source:2, target:3}, {source:2, target:6}, {source:2, target:7}, {source:2, target:8}, {source:2, target:4}, {source:2, target:5}, {source:3, target:5}, {source:3, target:8}, {source:3, target:4}, {source:3, target:6}, {source:3, target:7}, {source:4, target:7}, {source:4, target:5}, {source:4, target:6}, {source:4, target:8}, {source:5, target:7}, {source:5, target:8}, {source:5, target:6}, {source:6, target:7}, {source:6, target:8}, {source:7, target:8}, ], [{source:0, target:3}, {source:0, target:2}, {source:0, target:1}, {source:0, target:4}, {source:1, target:3}, {source:1, target:2}, {source:1, target:4}, {source:2, target:3}, {source:2, target:4}, {source:3, target:4}, ], [{source:0, target:7}, {source:1, target:2}, {source:1, target:12}, {source:1, target:11}, {source:1, target:5}, {source:1, target:4}, {source:1, target:8}, {source:1, target:13}, {source:1, target:7}, {source:2, target:4}, {source:2, target:8}, {source:2, target:11}, {source:2, target:12}, {source:2, target:13}, {source:2, target:5}, {source:2, target:7}, {source:3, target:8}, {source:4, target:7}, {source:4, target:8}, {source:4, target:13}, {source:4, target:5}, {source:4, target:11}, {source:4, target:12}, {source:5, target:8}, {source:5, target:11}, {source:5, target:12}, {source:5, target:7}, {source:5, target:13}, {source:6, target:8}, {source:7, target:13}, {source:7, target:12}, {source:7, target:8}, {source:7, target:11}, {source:8, target:9}, {source:8, target:10}, {source:8, target:11}, {source:8, target:13}, {source:8, target:12}, {source:11, target:12}, {source:11, target:13}, {source:12, target:13}, ], ];
+
+        var cytonodes = [ [{ data: {id:"Stearidonic acid", group:16} }, { data: {id:"(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", group:17} }, { data: {id:"(8Z,11Z,14Z)-Icosatrienoic acid", group:19} }, { data: {id:"(9Z,11E)-(13S)-13-Hydroperoxyoctadeca-9,11-dienoic acid", group:16} }, { data: {id:"(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", group:19} }, { data: {id:"(9Z)-Octadecenoic acid", group:17} }, { data: {id:"9(S)-HPODE", group:16} }, { data: {id:"(9Z,12Z,15Z)-Octadecatrienoic acid", group:17} }, { data: {id:"linoleic acid (all cis C18:2) n-6", group:17} }, { data: {id:"9(10)-EpOME", group:16} }, { data: {id:"12(13)-EpOME", group:16} }, { data: {id:"Hexadecanoate (n-C16:0)", group:17} }, { data: {id:"(6Z,9Z,12Z)-Octadecatrienoic acid", group:18} }, { data: {id:"arachidonic acid", group:17} }, ], [{ data: {id:"Stearidonic acid", group:16} }, { data: {id:"(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", group:17} }, { data: {id:"(8Z,11Z,14Z)-Icosatrienoic acid", group:19} }, { data: {id:"(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", group:19} }, { data: {id:"(9Z)-Octadecenoic acid", group:17} }, { data: {id:"(9Z,12Z,15Z)-Octadecatrienoic acid", group:17} }, { data: {id:"Hexadecanoate (n-C16:0)", group:17} }, { data: {id:"(6Z,9Z,12Z)-Octadecatrienoic acid", group:18} }, { data: {id:"arachidonic acid", group:17} }, ], [{ data: {id:"3-Methoxy-4-hydroxyphenylglycolaldehyde", group:18} }, { data: {id:"5-Hydroxykynurenamine", group:17} }, { data: {id:"Indole-3-acetaldehyde", group:18} }, { data: {id:"4-Hydroxyphenylacetaldehyde", group:18} }, { data: {id:"Citalopram aldehyde", group:16} }, ], [{ data: {id:"Stearidonic acid", group:16} }, { data: {id:"(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", group:17} }, { data: {id:"(8Z,11Z,14Z)-Icosatrienoic acid", group:19} }, { data: {id:"(9Z,11E)-(13S)-13-Hydroperoxyoctadeca-9,11-dienoic acid", group:16} }, { data: {id:"(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", group:19} }, { data: {id:"(9Z)-Octadecenoic acid", group:17} }, { data: {id:"9(S)-HPODE", group:16} }, { data: {id:"(9Z,12Z,15Z)-Octadecatrienoic acid", group:17} }, { data: {id:"linoleic acid (all cis C18:2) n-6", group:17} }, { data: {id:"9(10)-EpOME", group:16} }, { data: {id:"12(13)-EpOME", group:16} }, { data: {id:"Hexadecanoate (n-C16:0)", group:17} }, { data: {id:"(6Z,9Z,12Z)-Octadecatrienoic acid", group:18} }, { data: {id:"arachidonic acid", group:17} }, ], ];
+
+        var cytoedges = [[{ data: { id: "C16300-C06427", weight: 1, source: "Stearidonic acid", target: "(9Z,12Z,15Z)-Octadecatrienoic acid" } }, { data: { id: "C06428-C03242", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "(8Z,11Z,14Z)-Icosatrienoic acid" } }, { data: { id: "C06428-C06429", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid" } }, { data: { id: "C06428-C06426", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "(6Z,9Z,12Z)-Octadecatrienoic acid" } }, { data: { id: "C06428-C06427", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "(9Z,12Z,15Z)-Octadecatrienoic acid" } }, { data: { id: "C06428-C00249", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "Hexadecanoate (n-C16:0)" } }, { data: { id: "C06428-C01595", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "linoleic acid (all cis C18:2) n-6" } }, { data: { id: "C06428-C00712", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "(9Z)-Octadecenoic acid" } }, { data: { id: "C06428-C00219", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "arachidonic acid" } }, { data: { id: "C03242-C06429", weight: 1, source: "(8Z,11Z,14Z)-Icosatrienoic acid", target: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid" } }, { data: { id: "C03242-C01595", weight: 1, source: "(8Z,11Z,14Z)-Icosatrienoic acid", target: "linoleic acid (all cis C18:2) n-6" } }, { data: { id: "C03242-C00249", weight: 1, source: "(8Z,11Z,14Z)-Icosatrienoic acid", target: "Hexadecanoate (n-C16:0)" } }, { data: { id: "C03242-C06426", weight: 1, source: "(8Z,11Z,14Z)-Icosatrienoic acid", target: "(6Z,9Z,12Z)-Octadecatrienoic acid" } }, { data: { id: "C03242-C00219", weight: 1, source: "(8Z,11Z,14Z)-Icosatrienoic acid", target: "arachidonic acid" } }, { data: { id: "C03242-C00712", weight: 1, source: "(8Z,11Z,14Z)-Icosatrienoic acid", target: "(9Z)-Octadecenoic acid" } }, { data: { id: "C03242-C06427", weight: 1, source: "(8Z,11Z,14Z)-Icosatrienoic acid", target: "(9Z,12Z,15Z)-Octadecatrienoic acid" } }, { data: { id: "C04717-C01595", weight: 1, source: "(9Z,11E)-(13S)-13-Hydroperoxyoctadeca-9,11-dienoic acid", target: "linoleic acid (all cis C18:2) n-6" } }, { data: { id: "C06429-C06427", weight: 1, source: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", target: "(9Z,12Z,15Z)-Octadecatrienoic acid" } }, { data: { id: "C06429-C01595", weight: 1, source: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", target: "linoleic acid (all cis C18:2) n-6" } }, { data: { id: "C06429-C00219", weight: 1, source: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", target: "arachidonic acid" } }, { data: { id: "C06429-C00712", weight: 1, source: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", target: "(9Z)-Octadecenoic acid" } }, { data: { id: "C06429-C00249", weight: 1, source: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", target: "Hexadecanoate (n-C16:0)" } }, { data: { id: "C06429-C06426", weight: 1, source: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", target: "(6Z,9Z,12Z)-Octadecatrienoic acid" } }, { data: { id: "C00712-C06426", weight: 1, source: "(9Z)-Octadecenoic acid", target: "(6Z,9Z,12Z)-Octadecatrienoic acid" } }, { data: { id: "C00712-C06427", weight: 1, source: "(9Z)-Octadecenoic acid", target: "(9Z,12Z,15Z)-Octadecatrienoic acid" } }, { data: { id: "C00712-C00249", weight: 1, source: "(9Z)-Octadecenoic acid", target: "Hexadecanoate (n-C16:0)" } }, { data: { id: "C00712-C01595", weight: 1, source: "(9Z)-Octadecenoic acid", target: "linoleic acid (all cis C18:2) n-6" } }, { data: { id: "C00712-C00219", weight: 1, source: "(9Z)-Octadecenoic acid", target: "arachidonic acid" } }, { data: { id: "C14827-C01595", weight: 1, source: "9(S)-HPODE", target: "linoleic acid (all cis C18:2) n-6" } }, { data: { id: "C06427-C06426", weight: 1, source: "(9Z,12Z,15Z)-Octadecatrienoic acid", target: "(6Z,9Z,12Z)-Octadecatrienoic acid" } }, { data: { id: "C06427-C00219", weight: 1, source: "(9Z,12Z,15Z)-Octadecatrienoic acid", target: "arachidonic acid" } }, { data: { id: "C06427-C01595", weight: 1, source: "(9Z,12Z,15Z)-Octadecatrienoic acid", target: "linoleic acid (all cis C18:2) n-6" } }, { data: { id: "C06427-C00249", weight: 1, source: "(9Z,12Z,15Z)-Octadecatrienoic acid", target: "Hexadecanoate (n-C16:0)" } }, { data: { id: "C01595-C06426", weight: 1, source: "linoleic acid (all cis C18:2) n-6", target: "(6Z,9Z,12Z)-Octadecatrienoic acid" } }, { data: { id: "C01595-C00249", weight: 1, source: "linoleic acid (all cis C18:2) n-6", target: "Hexadecanoate (n-C16:0)" } }, { data: { id: "C01595-C14825", weight: 1, source: "linoleic acid (all cis C18:2) n-6", target: "9(10)-EpOME" } }, { data: { id: "C01595-C14826", weight: 1, source: "linoleic acid (all cis C18:2) n-6", target: "12(13)-EpOME" } }, { data: { id: "C01595-C00219", weight: 1, source: "linoleic acid (all cis C18:2) n-6", target: "arachidonic acid" } }, { data: { id: "C00249-C06426", weight: 1, source: "Hexadecanoate (n-C16:0)", target: "(6Z,9Z,12Z)-Octadecatrienoic acid" } }, { data: { id: "C00249-C00219", weight: 1, source: "Hexadecanoate (n-C16:0)", target: "arachidonic acid" } }, { data: { id: "C06426-C00219", weight: 1, source: "(6Z,9Z,12Z)-Octadecatrienoic acid", target: "arachidonic acid" } }, ], [{ data: { id: "C16300-C06427", weight: 1, source: "Stearidonic acid", target: "(9Z,12Z,15Z)-Octadecatrienoic acid" } }, { data: { id: "C06428-C03242", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "(8Z,11Z,14Z)-Icosatrienoic acid" } }, { data: { id: "C06428-C06429", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid" } }, { data: { id: "C06428-C06426", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "(6Z,9Z,12Z)-Octadecatrienoic acid" } }, { data: { id: "C06428-C06427", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "(9Z,12Z,15Z)-Octadecatrienoic acid" } }, { data: { id: "C06428-C00249", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "Hexadecanoate (n-C16:0)" } }, { data: { id: "C06428-C00712", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "(9Z)-Octadecenoic acid" } }, { data: { id: "C06428-C00219", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "arachidonic acid" } }, { data: { id: "C03242-C06429", weight: 1, source: "(8Z,11Z,14Z)-Icosatrienoic acid", target: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid" } }, { data: { id: "C03242-C00249", weight: 1, source: "(8Z,11Z,14Z)-Icosatrienoic acid", target: "Hexadecanoate (n-C16:0)" } }, { data: { id: "C03242-C06426", weight: 1, source: "(8Z,11Z,14Z)-Icosatrienoic acid", target: "(6Z,9Z,12Z)-Octadecatrienoic acid" } }, { data: { id: "C03242-C00219", weight: 1, source: "(8Z,11Z,14Z)-Icosatrienoic acid", target: "arachidonic acid" } }, { data: { id: "C03242-C00712", weight: 1, source: "(8Z,11Z,14Z)-Icosatrienoic acid", target: "(9Z)-Octadecenoic acid" } }, { data: { id: "C03242-C06427", weight: 1, source: "(8Z,11Z,14Z)-Icosatrienoic acid", target: "(9Z,12Z,15Z)-Octadecatrienoic acid" } }, { data: { id: "C06429-C06427", weight: 1, source: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", target: "(9Z,12Z,15Z)-Octadecatrienoic acid" } }, { data: { id: "C06429-C00219", weight: 1, source: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", target: "arachidonic acid" } }, { data: { id: "C06429-C00712", weight: 1, source: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", target: "(9Z)-Octadecenoic acid" } }, { data: { id: "C06429-C00249", weight: 1, source: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", target: "Hexadecanoate (n-C16:0)" } }, { data: { id: "C06429-C06426", weight: 1, source: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", target: "(6Z,9Z,12Z)-Octadecatrienoic acid" } }, { data: { id: "C00712-C06426", weight: 1, source: "(9Z)-Octadecenoic acid", target: "(6Z,9Z,12Z)-Octadecatrienoic acid" } }, { data: { id: "C00712-C06427", weight: 1, source: "(9Z)-Octadecenoic acid", target: "(9Z,12Z,15Z)-Octadecatrienoic acid" } }, { data: { id: "C00712-C00249", weight: 1, source: "(9Z)-Octadecenoic acid", target: "Hexadecanoate (n-C16:0)" } }, { data: { id: "C00712-C00219", weight: 1, source: "(9Z)-Octadecenoic acid", target: "arachidonic acid" } }, { data: { id: "C06427-C06426", weight: 1, source: "(9Z,12Z,15Z)-Octadecatrienoic acid", target: "(6Z,9Z,12Z)-Octadecatrienoic acid" } }, { data: { id: "C06427-C00219", weight: 1, source: "(9Z,12Z,15Z)-Octadecatrienoic acid", target: "arachidonic acid" } }, { data: { id: "C06427-C00249", weight: 1, source: "(9Z,12Z,15Z)-Octadecatrienoic acid", target: "Hexadecanoate (n-C16:0)" } }, { data: { id: "C00249-C06426", weight: 1, source: "Hexadecanoate (n-C16:0)", target: "(6Z,9Z,12Z)-Octadecatrienoic acid" } }, { data: { id: "C00249-C00219", weight: 1, source: "Hexadecanoate (n-C16:0)", target: "arachidonic acid" } }, { data: { id: "C06426-C00219", weight: 1, source: "(6Z,9Z,12Z)-Octadecatrienoic acid", target: "arachidonic acid" } }, ], [{ data: { id: "C05583-C03765", weight: 1, source: "3-Methoxy-4-hydroxyphenylglycolaldehyde", target: "4-Hydroxyphenylacetaldehyde" } }, { data: { id: "C05583-C00637", weight: 1, source: "3-Methoxy-4-hydroxyphenylglycolaldehyde", target: "Indole-3-acetaldehyde" } }, { data: { id: "C05583-C05638", weight: 1, source: "3-Methoxy-4-hydroxyphenylglycolaldehyde", target: "5-Hydroxykynurenamine" } }, { data: { id: "C05583-C16612", weight: 1, source: "3-Methoxy-4-hydroxyphenylglycolaldehyde", target: "Citalopram aldehyde" } }, { data: { id: "C05638-C03765", weight: 1, source: "5-Hydroxykynurenamine", target: "4-Hydroxyphenylacetaldehyde" } }, { data: { id: "C05638-C00637", weight: 1, source: "5-Hydroxykynurenamine", target: "Indole-3-acetaldehyde" } }, { data: { id: "C05638-C16612", weight: 1, source: "5-Hydroxykynurenamine", target: "Citalopram aldehyde" } }, { data: { id: "C00637-C03765", weight: 1, source: "Indole-3-acetaldehyde", target: "4-Hydroxyphenylacetaldehyde" } }, { data: { id: "C00637-C16612", weight: 1, source: "Indole-3-acetaldehyde", target: "Citalopram aldehyde" } }, { data: { id: "C03765-C16612", weight: 1, source: "4-Hydroxyphenylacetaldehyde", target: "Citalopram aldehyde" } }, ], [{ data: { id: "C16300-C06427", weight: 1, source: "Stearidonic acid", target: "(9Z,12Z,15Z)-Octadecatrienoic acid" } }, { data: { id: "C06428-C03242", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "(8Z,11Z,14Z)-Icosatrienoic acid" } }, { data: { id: "C06428-C06426", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "(6Z,9Z,12Z)-Octadecatrienoic acid" } }, { data: { id: "C06428-C00249", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "Hexadecanoate (n-C16:0)" } }, { data: { id: "C06428-C00712", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "(9Z)-Octadecenoic acid" } }, { data: { id: "C06428-C06429", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid" } }, { data: { id: "C06428-C01595", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "linoleic acid (all cis C18:2) n-6" } }, { data: { id: "C06428-C00219", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "arachidonic acid" } }, { data: { id: "C06428-C06427", weight: 1, source: "(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid", target: "(9Z,12Z,15Z)-Octadecatrienoic acid" } }, { data: { id: "C03242-C06429", weight: 1, source: "(8Z,11Z,14Z)-Icosatrienoic acid", target: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid" } }, { data: { id: "C03242-C01595", weight: 1, source: "(8Z,11Z,14Z)-Icosatrienoic acid", target: "linoleic acid (all cis C18:2) n-6" } }, { data: { id: "C03242-C00249", weight: 1, source: "(8Z,11Z,14Z)-Icosatrienoic acid", target: "Hexadecanoate (n-C16:0)" } }, { data: { id: "C03242-C06426", weight: 1, source: "(8Z,11Z,14Z)-Icosatrienoic acid", target: "(6Z,9Z,12Z)-Octadecatrienoic acid" } }, { data: { id: "C03242-C00219", weight: 1, source: "(8Z,11Z,14Z)-Icosatrienoic acid", target: "arachidonic acid" } }, { data: { id: "C03242-C00712", weight: 1, source: "(8Z,11Z,14Z)-Icosatrienoic acid", target: "(9Z)-Octadecenoic acid" } }, { data: { id: "C03242-C06427", weight: 1, source: "(8Z,11Z,14Z)-Icosatrienoic acid", target: "(9Z,12Z,15Z)-Octadecatrienoic acid" } }, { data: { id: "C04717-C01595", weight: 1, source: "(9Z,11E)-(13S)-13-Hydroperoxyoctadeca-9,11-dienoic acid", target: "linoleic acid (all cis C18:2) n-6" } }, { data: { id: "C06429-C06427", weight: 1, source: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", target: "(9Z,12Z,15Z)-Octadecatrienoic acid" } }, { data: { id: "C06429-C01595", weight: 1, source: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", target: "linoleic acid (all cis C18:2) n-6" } }, { data: { id: "C06429-C00219", weight: 1, source: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", target: "arachidonic acid" } }, { data: { id: "C06429-C00712", weight: 1, source: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", target: "(9Z)-Octadecenoic acid" } }, { data: { id: "C06429-C00249", weight: 1, source: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", target: "Hexadecanoate (n-C16:0)" } }, { data: { id: "C06429-C06426", weight: 1, source: "(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid", target: "(6Z,9Z,12Z)-Octadecatrienoic acid" } }, { data: { id: "C00712-C01595", weight: 1, source: "(9Z)-Octadecenoic acid", target: "linoleic acid (all cis C18:2) n-6" } }, { data: { id: "C00712-C00249", weight: 1, source: "(9Z)-Octadecenoic acid", target: "Hexadecanoate (n-C16:0)" } }, { data: { id: "C00712-C06426", weight: 1, source: "(9Z)-Octadecenoic acid", target: "(6Z,9Z,12Z)-Octadecatrienoic acid" } }, { data: { id: "C00712-C06427", weight: 1, source: "(9Z)-Octadecenoic acid", target: "(9Z,12Z,15Z)-Octadecatrienoic acid" } }, { data: { id: "C00712-C00219", weight: 1, source: "(9Z)-Octadecenoic acid", target: "arachidonic acid" } }, { data: { id: "C14827-C01595", weight: 1, source: "9(S)-HPODE", target: "linoleic acid (all cis C18:2) n-6" } }, { data: { id: "C06427-C00219", weight: 1, source: "(9Z,12Z,15Z)-Octadecatrienoic acid", target: "arachidonic acid" } }, { data: { id: "C06427-C06426", weight: 1, source: "(9Z,12Z,15Z)-Octadecatrienoic acid", target: "(6Z,9Z,12Z)-Octadecatrienoic acid" } }, { data: { id: "C06427-C01595", weight: 1, source: "(9Z,12Z,15Z)-Octadecatrienoic acid", target: "linoleic acid (all cis C18:2) n-6" } }, { data: { id: "C06427-C00249", weight: 1, source: "(9Z,12Z,15Z)-Octadecatrienoic acid", target: "Hexadecanoate (n-C16:0)" } }, { data: { id: "C01595-C14825", weight: 1, source: "linoleic acid (all cis C18:2) n-6", target: "9(10)-EpOME" } }, { data: { id: "C01595-C14826", weight: 1, source: "linoleic acid (all cis C18:2) n-6", target: "12(13)-EpOME" } }, { data: { id: "C01595-C00249", weight: 1, source: "linoleic acid (all cis C18:2) n-6", target: "Hexadecanoate (n-C16:0)" } }, { data: { id: "C01595-C00219", weight: 1, source: "linoleic acid (all cis C18:2) n-6", target: "arachidonic acid" } }, { data: { id: "C01595-C06426", weight: 1, source: "linoleic acid (all cis C18:2) n-6", target: "(6Z,9Z,12Z)-Octadecatrienoic acid" } }, { data: { id: "C00249-C06426", weight: 1, source: "Hexadecanoate (n-C16:0)", target: "(6Z,9Z,12Z)-Octadecatrienoic acid" } }, { data: { id: "C00249-C00219", weight: 1, source: "Hexadecanoate (n-C16:0)", target: "arachidonic acid" } }, { data: { id: "C06426-C00219", weight: 1, source: "(6Z,9Z,12Z)-Octadecatrienoic acid", target: "arachidonic acid" } }, ], ];
+
+
+        var w = 960, h = 600;
+        var color = d3.scale.category20b();
+        var node_sizes = [16, 8, 32]
+        
+        var scalebar = d3.select("#colorbar").append("svg").attr("id", "svg_colorbar").attr("width", w).attr("height", 10);
+        var coloridx = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
+        scalebar.selectAll("rect")
+           .data(coloridx)
+           .enter()
+           .append("rect")
+           .attr("x", function(d, i) {return i * 48;})
+           .attr("y", 0)
+           .attr("width", 48)
+           .attr("height", 10)
+           .attr("fill", function(d, i) { return color(i); });
+           
+        //user input plots
+        var data = JSON.parse(alldata);
+        makeMZUserInputPlot();
+        makeRetTimeUserInputPlot();
+
+        //Pathway Bar chart plot
+        makePathwayPlot()
+        
+        // initial draw
+        cyto_draw_figure(cytonodes[0], cytoedges[0], node_sizes[0]);
+    	var cy = $('#networkvisual').cytoscape('get');
+    	cy.panBy({ x: 0, y: -200 });
+    	
+        // support cytoscape.js  
+		function cyto_draw_figure(nodes, links, node_size) {  
+
+                    var svg = document.createElement('div');
+                    svg.setAttribute("id","svg2");
+                    svg.setAttribute("class","svg2");
+                    var nw = document.getElementById("networkvisual");
+                    nw.appendChild(svg);
+
+				$('#svg2').cytoscape({
+						style: cytoscape.stylesheet()
+						.selector('node')
+						  .css({
+							'content': 'data(id)',
+							'font-size': node_size,
+							'min-zoomed-font-size': 8,
+							'background-color': 'mapData(group, 0, 19, blue, red)'
+						  })
+						.selector('edge')
+						  .css({
+							'target-arrow-shape': 'triangle',
+							'width': 4,
+							'line-color': '#ddd',
+							'target-arrow-color': '#ddd'
+						  })
+						.selector('.highlighted')
+						  .css({
+							'background-color': '#61bffc',
+							'line-color': '#61bffc',
+							'target-arrow-color': '#61bffc',
+							'transition-property': 'background-color, line-color, target-arrow-color',
+							'transition-duration': '0.5s'
+						  }),
+  
+					  layout: {
+						name: 'spread',
+						minDist: 40,
+						directed: true,
+						padding: 10,
+						//fit: false,
+					  },
+					  
+					  elements: {
+						  nodes: nodes, 
+						  edges: links
+						},
+  
+					  zoom: 1,
+					  minZoom: 0.1,
+ 					  maxZoom: 5,
+
+				});
+	
+		}
+	
+
+        // support d3.js  
+        function d3_draw_figure(nodes, links, node_size) {
+
+            var svg = document.createElement('div');
+            svg.setAttribute("id","svg2");
+            svg.setAttribute("class","svg2");
+            var nw = document.getElementById("networkvisual");
+            nw.appendChild(svg);
+
+            var svg = d3.select("#svg2").append("svg").attr("id", "svg_networkvisual").attr("width", w).attr("height", h);
+            var force = d3.layout.force()
+                      .charge(-480)
+                      .linkDistance(80)
+                      .gravity(0.3)
+                      .size([w, h]);
+    
+            force.nodes(nodes)
+              .links(links)
+              .start();
+            
+            var link = svg.selectAll(".link")
+              .data(links)
+              .enter().append("line")
+              .attr("class", "link")
+              .style("stroke-width", 2);
+            
+            var node = svg.selectAll(".node")
+              .data(nodes)
+              .enter().append("circle")
+              .attr("class", "node")
+              .attr("r", node_size)
+              .style("fill", function(d) { return color(d.group); })
+              .style("fill-opacity", .6)
+              .call(force.drag);
+            
+            var text = svg.selectAll(".text")
+              .data(nodes)
+              .enter().append("text")
+              .attr("font-family", "sans-serif")
+              .attr("font-size", "9px")
+              .attr("text-anchor", "middle")
+              .text(function(d) { return d.name; });
+            
+            force.on("tick", function() {
+                link.attr("x1", function(d) { return d.source.x; })
+                    .attr("y1", function(d) { return d.source.y; })
+                    .attr("x2", function(d) { return d.target.x; })
+                    .attr("y2", function(d) { return d.target.y; });
+            
+                node.attr("cx", function(d) { return d.x; })
+                    .attr("cy", function(d) { return d.y; });
+            
+                text.attr("x", function(d) { return d.x; })
+                    .attr("y", function(d) { return d.y; });
+              });
+        }
+    
+    
+        function inv(i) {
+           if (i==0)
+              return 0
+           else if (i==1)
+              return 2
+           else
+              return 1
+}
+
+    	// added support of two styles
+        function updateDrawing() {
+            var idx = document.getElementById("nmodule_select").selectedIndex;
+            var ndx = document.getElementById("nsize_select").selectedIndex;
+            var vdx = document.getElementById("vstyle_select").selectedIndex;
+            
+            //d3.select("#svg_networkvisual").remove();
+            var svg = document.getElementById("svg2");
+	    svg.parentNode.removeChild(svg);
+
+            //var cy = $('#networkvisual').cytoscape('get');
+            //cy.remove( cy.elements() );
+            
+            // 0 for cytoscape style, drag; 1 for d3 style, force
+            if (vdx == 0) {
+            cyto_draw_figure(cytonodes[idx], cytoedges[idx], node_sizes[inv(ndx)]);
+            
+    		var cy = $('#networkvisual').cytoscape('get');
+    		cy.panBy({ x: 0, y: -200 });
+            
+            } else {
+            d3_draw_figure(nodes[idx], links[idx], node_sizes[ndx]);
+            }
+        }
+    
+    </script>
+    </body> </html> 

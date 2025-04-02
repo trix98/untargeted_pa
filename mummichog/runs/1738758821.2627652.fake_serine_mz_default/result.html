@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+        <html xmlns="http://www.w3.org/1999/xhtml"> 
+        <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+        <title>Mummichog Report</title> 
+
+        <style type="text/css"> 
+        body {width: 960px; padding: 10px; }
+        
+        div.colorbar {margin-bottom: 7px}
+        div.networkvisual { margin: auto; height: 600px; width: 960px; overflow: auto !important;}
+        div.svg2 { margin: auto; height: 600px; width: 960px; overflow: auto !important;}
+
+        div.stats {margin-top: 10; font-size:0.7em; color:#888;}
+
+        div.moduleline{font-size: 0.9em; font-weight: bold;
+        }
+        div.metabolites {
+            font-size: 0.7em;
+            padding-left: 15px; padding-bottom: 7px;
+        }
+        
+        footer { margin-top: 30px;    padding: 10px 0;    border-top: 1px solid #582E2E;    font-size:0.7em;    color:#888;}
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Trebuchet MS', 'Lucida Grande', Arial, Sans-Serif;
+            font-weight: bold;
+        }
+        
+        h1 { font-size: 1.4em; }
+        h2 { font-size: 1.2em; }
+        h3 { font-size: 1em; }
+        h4 { font-size: 0.9em;     padding-left: 15px; padding-bottom: 2px; margin-bottom:0px;}
+        th {
+            background: #DAFDCF;
+            font-size:0.9em;
+            text-align: left;
+            padding:5px;
+        }
+        
+        tr:nth-child(even) {background-color: #f2f2f2}
+        tr:hover {background-color: #f5f5f5}
+        
+        td {
+            font-family: Verdana, Arial, sans-serif;
+            color: black;
+            font-size:0.7em;
+            margin:10px;
+            margin-top:0px;
+            padding: 5px;
+        }
+        
+        .node {
+          stroke: #fff;
+          stroke-width: 1.5px;
+        }
+        
+        .link {
+          stroke: #999;
+          stroke-opacity: .6;
+        }
+        div.network_selection {float: left; margin-top: 6; margin-bottom: 10; font-size:0.8em;}
+        </style> 
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" charset="utf-8"></script>
+        <script src="https://shuzhao-li.github.io/mummichog.org/download/cytoscape.min.js" charset="utf-8"></script>
+        <script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-spread/1.0.9/cytoscape-spread.js"></script> 
+        <script src="js/plotly-latest.min.js"></script>
+        <script src="js/plotly-graphs.js"></script>
+        <script src="js/result.js"></script>
+        </head> 
+        <body> 
+        <h1>Mummichog Report: fake_serine_mz_default</h1>
+<div id="colorbar" class="colorbar"></div>
+<div class="stats">mummichog version: 2.7.0, using metabolic model MFN_1.10.4.<br></div>
+<h2>User input data</h2>
+<p>User supplied 4059 features as reference list.We are using 388 features (p < 0.010000) as significant list. The feature level data are shown in the Manhattan plots below.</p>
+<div id="mz_user_input"></div>
+<div id="retention_time_input"></div>
+<h2>Top pathways</h2>
+<p>The reference feature list is mapped to 217 EmpiricalCompounds, significant features to 24 EmpiricalCompounds. In the table below, pathway_size is number of detected EmpiricalCompounds for each pathway; overlap_size is number of significant EmpiricalCompounds.                                Empirical p-values are estimated by permutation test. Details on EmpiricalCompounds are in 'tables/ListOfEmpiricalCompounds.tsv'.</p>
+<div class="pathwaystablly"><table><tr><th>Pathways</th>                    <th>overlap_size</th><th>pathway_size</th><th>p-value</th>                    <th>overlap_EmpiricalCompounds</th></tr><tr> <td>Limonene and pinene degradation</td> <td>2</td><td>3</td><td>0.00672</td><td>E101,E100</td></tr><tr> <td>Purine metabolism</td> <td>3</td><td>9</td><td>0.01512</td><td>E205,E210,E211</td></tr><tr> <td>Histidine metabolism</td> <td>2</td><td>7</td><td>0.06084</td><td>E210,E152</td></tr><tr> <td>Glycerophospholipid metabolism</td> <td>3</td><td>14</td><td>0.06487</td><td>E415,E113,E165</td></tr><tr> <td>Pyrimidine metabolism</td> <td>3</td><td>14</td><td>0.06487</td><td>E210,E424,E528</td></tr></table></div>
+<div id="pathwayBarPlot"></div>
+<h2>Top modules</h2>
+<p>Network modules may capture concerted metabolite activities that are missed by predefined pathways.         Use pull-down menus to visualize modules and the activity network, which tries to combine the results of         pathway/module analyses. The visualization requires interenet connection.</p>
+<div id="network_selection" class="network_selection">Showing
+        <select id="nmodule_select" onchange="updateDrawing();">
+          <option>Activity network</option>
+                   </select>
+                    Node size <select id="nsize_select"  onchange="updateDrawing();">
+                      <option value=16>Medium</option>
+                      <option value=8>Small</option>
+                      <option value=32>Large</option>
+                    </select>
+                    Visual style <select id="vstyle_select"  onchange="updateDrawing();">
+                      <option value=0>Drag</option>
+                      <option value=1>Force</option>
+                    </select>
+                    </div>
+<div id="networkvisual" class="networkvisual"></div>
+<div class="modulestablly">
+</div>
+<h2>EmpiricalCompounds favored by above analyses</h2>
+<p>An EmpiricalCompound is a computational unit for a tentative metabolite. It can group multiple ions,                     and be any of the isobaric/isomeric species. This table contains EmpiricalCompounds prioritized by pathway/module analysis.</p>
+<div class="metabolitestablly"><table><tr><th>EmpiricalCompound</th><th>Input m/z</th>                    <th>Retention time</th><th>ion</th><th>mz_diff</th><th>Statistic</th>                    <th>Significant</th></tr><tr > <td>E101</td> <td colspan="2">Best guess: C06099, (+)-Limonene</td><td colspan="4">C06078, C00521, C06099</td></tr><tr> <td> </td> <td>137.1327188</td> <td>575.7523193</td><td>M+H[1+]</td><td>0.0002</td><td>4.66</td><td>yes</td></tr><tr > <td>E100</td> <td colspan="2">Best guess: C06099, (+)-Limonene</td><td colspan="4">C06078, C00521, C06099</td></tr><tr> <td> </td> <td>137.1327572</td> <td>463.2609253</td><td>M+H[1+]</td><td>0.0003</td><td>3.68</td><td>yes</td></tr><tr > <td>E205</td> <td colspan="2">Best guess: C00366, Urate</td><td colspan="4">C00366</td></tr><tr> <td> </td> <td>169.0359034</td> <td>62.65022087</td><td>M+H[1+]</td><td>0.0003</td><td>-3.58</td><td>yes</td></tr><tr > <td>E211</td> <td colspan="2">Best guess: C04751, 5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate</td><td colspan="4">C04751</td></tr><tr> <td> </td> <td>340.0537621</td> <td>491.0286865</td><td>M+H[1+]</td><td>-0.0003</td><td>4.51</td><td>yes</td></tr><tr > <td>E210</td> <td colspan="2">Best guess: C05938, L-4-Hydroxyglutamate semialdehyde</td><td colspan="4">C00217, C00025, C05938</td></tr><tr> <td> </td> <td>170.0407852</td> <td>62.65639496</td><td>M+Na[1+]</td><td>-0.0017</td><td>-3.42</td><td>yes</td></tr></table></div>
+<h2>More data</h2>
+<p class="moreinformation">Full data tables from pathway analysis, module analysis and activity network are stored in the 'tables/' directory. 
+            The tsv files can be imported into a spreadsheet program, e.g. MS Excel.
+            Under the 'figures/network_modules/' directory are files intended for Cytoscape (cytoscape.org) visualization. Please refer to Cytoscape's guides for details.
+            Details of this run are recorded in file mummichog.log.txt.
+            </p>
+<footer>Mummichog algorithms are described in Li et al. Predicting Network Activity from High Throughput Metabolomics. PLoS Computational Biology (2013); doi:10.1371/journal.pcbi.1003123.        This software is provided as is, without warranty of any kind. Visit <a href="http://mummichog.org">http://mummichog.org</a> for updates.
+        </footer>
+
+        <script type="text/javascript" charset="utf-8">
+        var nodes = [ [{name:"L-Glutamate", group:2}, {name:"7,8-Dihydrofolate", group:10}, {name:"Ammonium", group:10}, {name:"4-(2-Aminophenyl)-2,4-dioxobutanoate", group:10}, {name:"4-Aminobutanoate", group:10}, {name:"5-Oxoproline", group:10}, {name:"O-Phospho-L-serine", group:10}, {name:"Xanthosine 5'-phosphate", group:10}, {name:"2-Oxoglutarate", group:10}, {name:"Bicarbonate", group:10}, {name:"3-Sulfinopyruvate", group:10}, {name:"Leukotriene D4", group:10}, {name:"L-Tyrosine", group:10}, {name:"5-Phospho-beta-D-ribosylamine", group:10}, {name:"Tetrahydrofolyl-[Glu](2)", group:10}, {name:"leukotriene E4", group:10}, {name:"AMP", group:10}, {name:"5-Formiminotetrahydrofolate", group:10}, {name:"4-Hydroxy-2-oxoglutarate", group:10}, {name:"CTP", group:10}, {name:"L-Glutamate 5-semialdehyde", group:10}, {name:"tRNA(Gln)", group:10}, {name:"leukotriene D5", group:10}, {name:"1-Pyrroline-5-carboxylate", group:10}, {name:"D-Fructose 6-phosphate", group:10}, {name:"Pyruvate", group:10}, {name:"alpha-Amino acid", group:10}, {name:"4-Hydroxy-2-quinolinecarboxylic acid", group:10}, {name:"3-hydroxykynurenine-O-beta-D-glucoside", group:10}, {name:"N-Formimidoyl-L-glutamate", group:10}, {name:"3-Hydroxy-L-kynurenine", group:10}, {name:"L-Glutamyl-tRNA(Gln)", group:10}, {name:"N-Formyl-L-glutamate", group:10}, {name:"UTP", group:10}, {name:"L-Kynurenine", group:10}, {name:"10-Formyltetrahydrofolyl L-glutamate", group:10}, {name:"10-Formyltetrahydrofolylpolyglutamate", group:10}, {name:"L-Cysteate", group:10}, {name:"L-Phenylalanine", group:10}, {name:"L-Isoleucine", group:10}, {name:"L-Glutamine", group:10}, {name:"R-S-Glutathione", group:10}, {name:"3-Sulfino-L-alanine", group:10}, {name:"6-Acetamido-2-oxohexanoate", group:10}, {name:"2-(Formamido)-N1-(5-phospho-D-ribosyl)acetamidine", group:10}, {name:"3-Methyl-2-oxobutanoate", group:10}, {name:"N2-Formyl-N1-(5-phospho-D-ribosyl)glycinamide", group:10}, {name:"5-Phospho-alpha-D-ribose 1-diphosphate", group:10}, {name:"R-S-Cysteinylglycine", group:10}, {name:"Acetyl-CoA", group:10}, {name:"Dihydropteroate", group:10}, {name:"beta-Alanine", group:10}, {name:"3-(4-Hydroxyphenyl)pyruvate", group:10}, {name:"N6-Acetyl-L-lysine", group:10}, {name:"xanthurenate-8-O-beta-D-glucoside", group:10}, {name:"GMP", group:10}, {name:"2-keto-4-methylthiobutyrate", group:10}, {name:"NH4+", group:10}, {name:"Oxaloacetate", group:10}, {name:"Cys-Gly", group:10}, {name:"Tetrahydrofolyl-[Glu](n)", group:10}, {name:"2-Oxo-3-hydroxy-4-phosphobutanoate", group:10}, {name:"L-Leucine", group:10}, {name:"L-Aspartate", group:10}, {name:"10-Formyltetrahydrofolate", group:10}, {name:"leukotriene F4", group:10}, {name:"leukotriene C5", group:10}, {name:"L-2-Aminoadipate", group:10}, {name:"Leukotriene C4", group:10}, {name:"3-Sulfopyruvate", group:10}, {name:"Ornithine", group:10}, {name:"3-Phosphohydroxypyruvate", group:10}, {name:"L-3-Amino-isobutanoate", group:10}, {name:"3-Methyl-2-oxopentanoate", group:10}, {name:"N6-(L-1,3-Dicarboxypropyl)-L-lysine", group:10}, {name:"N-Succinyl-L-glutamate 5-semialdehyde", group:10}, {name:"2-Oxoadipate", group:10}, {name:"4-Methyl-2-oxopentanoate", group:10}, {name:"pentaglutamyl folate (DHF)", group:10}, {name:"(S)-3-Methyl-2-oxopentanoate", group:10}, {name:"Deamino-NAD+", group:10}, {name:"4-Hydroxy-2-oxoglutarate", group:10}, {name:"(S)-2-Aminobutanoate", group:10}, {name:"L-Alanine", group:10}, {name:"Coenzyme A", group:10}, {name:"10-formyltetrahydrofolate-[Glu](5)", group:10}, {name:"Succinate semialdehyde", group:10}, {name:"N2-Succinyl-L-ornithine", group:10}, {name:"Carbamoyl phosphate", group:10}, {name:"L-Methionine", group:10}, {name:"(S)-Methylmalonate semialdehyde", group:10}, {name:"Ornithine", group:10}, {name:"D-Glucosamine 6-phosphate", group:10}, {name:"D-3-Amino-isobutanoate", group:10}, {name:"Beta cyanoalanine", group:10}, {name:"Mercaptopyruvate", group:10}, {name:"hexaglutamyl folate  (THF)", group:10}, {name:"Xanthurenic acid", group:10}, {name:"5,6,7,8-Tetrahydrofolate", group:10}, {name:"L-2-Aminoadipate 6-semialdehyde", group:10}, {name:"L-Glutamyl-tRNA(Glu)", group:10}, {name:"Reduced glutathione", group:10}, {name:"L-Cysteine", group:10}, {name:"2-Oxobutanoate", group:10}, {name:"L-Valine", group:10}, {name:"tRNA (Glu)", group:10}, {name:"4-(2-Amino-3-hydroxyphenyl)-2,4-dioxobutanoate", group:10}, {name:"O-Phospho-4-hydroxy-L-threonine", group:10}, {name:"5-Formyltetrahydrofolate", group:10}, {name:"L-Glutamyl 5-phosphate", group:10}, {name:"L-erythro-4-Hydroxyglutamate", group:10}, {name:"N-Acetyl-L-glutamate", group:10}, {name:"3-Oxopropanoate", group:10}, {name:"C05829", group:10}, {name:"L-Asparagine", group:10}, {name:"Phenylpyruvate", group:10}, {name:"gamma-L-Glutamyl-L-cysteine", group:10}, {name:"heptaglutamyl folate (THF)", group:10}, {name:"2-Methyl-3-oxopropanoate", group:10}, {name:"6-Thioguanosine monophosphate", group:10}, {name:"2-Oxo acid", group:10}, {name:"6-Thioxanthine 5'-monophosphate", group:10}, {name:"gamma-Glutamyl-beta-cyanoalanine", group:10}, {name:"pentaglutamyl folate (THF)", group:10}, {name:"L-4-Hydroxyglutamate semialdehyde", group:2}, {name:"L-Proline", group:10}, {name:"Reduced acceptor", group:10}, {name:"Acceptor", group:10}, {name:"L-1-Pyrroline-3-hydroxy-5-carboxylate", group:10}, {name:"D-Glutamate", group:2}, {name:"D-Glutamine", group:10}, {name:"5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate", group:18}, {name:"(S)-2-[5-Amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido]succinate", group:10}, {name:"5-amino-1-(5-phospho-D-ribosyl)imidazole", group:10}, ], ];
+
+        var links = [[{source:0, target:1}, {source:0, target:2}, {source:0, target:3}, {source:0, target:4}, {source:0, target:5}, {source:0, target:6}, {source:0, target:7}, {source:0, target:8}, {source:0, target:9}, {source:0, target:10}, {source:0, target:11}, {source:0, target:12}, {source:0, target:13}, {source:0, target:14}, {source:0, target:15}, {source:0, target:16}, {source:0, target:17}, {source:0, target:18}, {source:0, target:19}, {source:0, target:20}, {source:0, target:21}, {source:0, target:22}, {source:0, target:23}, {source:0, target:24}, {source:0, target:25}, {source:0, target:26}, {source:0, target:27}, {source:0, target:28}, {source:0, target:29}, {source:0, target:30}, {source:0, target:31}, {source:0, target:32}, {source:0, target:33}, {source:0, target:34}, {source:0, target:35}, {source:0, target:36}, {source:0, target:37}, {source:0, target:38}, {source:0, target:39}, {source:0, target:40}, {source:0, target:41}, {source:0, target:42}, {source:0, target:43}, {source:0, target:44}, {source:0, target:45}, {source:0, target:46}, {source:0, target:47}, {source:0, target:48}, {source:0, target:49}, {source:0, target:50}, {source:0, target:51}, {source:0, target:52}, {source:0, target:53}, {source:0, target:54}, {source:0, target:55}, {source:0, target:56}, {source:0, target:57}, {source:0, target:58}, {source:0, target:59}, {source:0, target:60}, {source:0, target:61}, {source:0, target:62}, {source:0, target:63}, {source:0, target:64}, {source:0, target:65}, {source:0, target:66}, {source:0, target:67}, {source:0, target:68}, {source:0, target:69}, {source:0, target:70}, {source:0, target:71}, {source:0, target:72}, {source:0, target:73}, {source:0, target:74}, {source:0, target:75}, {source:0, target:76}, {source:0, target:77}, {source:0, target:78}, {source:0, target:79}, {source:0, target:80}, {source:0, target:81}, {source:0, target:82}, {source:0, target:83}, {source:0, target:84}, {source:0, target:85}, {source:0, target:86}, {source:0, target:87}, {source:0, target:88}, {source:0, target:89}, {source:0, target:90}, {source:0, target:91}, {source:0, target:92}, {source:0, target:93}, {source:0, target:94}, {source:0, target:95}, {source:0, target:96}, {source:0, target:97}, {source:0, target:98}, {source:0, target:99}, {source:0, target:100}, {source:0, target:101}, {source:0, target:102}, {source:0, target:103}, {source:0, target:104}, {source:0, target:105}, {source:0, target:106}, {source:0, target:107}, {source:0, target:108}, {source:0, target:109}, {source:0, target:110}, {source:0, target:111}, {source:0, target:112}, {source:0, target:113}, {source:0, target:114}, {source:0, target:115}, {source:0, target:116}, {source:0, target:117}, {source:0, target:118}, {source:0, target:119}, {source:0, target:120}, {source:0, target:121}, {source:0, target:122}, {source:0, target:123}, {source:2, target:129}, {source:23, target:124}, {source:63, target:131}, {source:110, target:124}, {source:124, target:125}, {source:124, target:126}, {source:124, target:127}, {source:124, target:128}, {source:129, target:130}, {source:131, target:132}, {source:131, target:133}, ], ];
+
+        var cytonodes = [ [{ data: {id:"L-Glutamate", group:2} }, { data: {id:"7,8-Dihydrofolate", group:10} }, { data: {id:"Ammonium", group:10} }, { data: {id:"4-(2-Aminophenyl)-2,4-dioxobutanoate", group:10} }, { data: {id:"4-Aminobutanoate", group:10} }, { data: {id:"5-Oxoproline", group:10} }, { data: {id:"O-Phospho-L-serine", group:10} }, { data: {id:"Xanthosine 5'-phosphate", group:10} }, { data: {id:"2-Oxoglutarate", group:10} }, { data: {id:"Bicarbonate", group:10} }, { data: {id:"3-Sulfinopyruvate", group:10} }, { data: {id:"Leukotriene D4", group:10} }, { data: {id:"L-Tyrosine", group:10} }, { data: {id:"5-Phospho-beta-D-ribosylamine", group:10} }, { data: {id:"Tetrahydrofolyl-[Glu](2)", group:10} }, { data: {id:"leukotriene E4", group:10} }, { data: {id:"AMP", group:10} }, { data: {id:"5-Formiminotetrahydrofolate", group:10} }, { data: {id:"4-Hydroxy-2-oxoglutarate", group:10} }, { data: {id:"CTP", group:10} }, { data: {id:"L-Glutamate 5-semialdehyde", group:10} }, { data: {id:"tRNA(Gln)", group:10} }, { data: {id:"leukotriene D5", group:10} }, { data: {id:"1-Pyrroline-5-carboxylate", group:10} }, { data: {id:"D-Fructose 6-phosphate", group:10} }, { data: {id:"Pyruvate", group:10} }, { data: {id:"alpha-Amino acid", group:10} }, { data: {id:"4-Hydroxy-2-quinolinecarboxylic acid", group:10} }, { data: {id:"3-hydroxykynurenine-O-beta-D-glucoside", group:10} }, { data: {id:"N-Formimidoyl-L-glutamate", group:10} }, { data: {id:"3-Hydroxy-L-kynurenine", group:10} }, { data: {id:"L-Glutamyl-tRNA(Gln)", group:10} }, { data: {id:"N-Formyl-L-glutamate", group:10} }, { data: {id:"UTP", group:10} }, { data: {id:"L-Kynurenine", group:10} }, { data: {id:"10-Formyltetrahydrofolyl L-glutamate", group:10} }, { data: {id:"10-Formyltetrahydrofolylpolyglutamate", group:10} }, { data: {id:"L-Cysteate", group:10} }, { data: {id:"L-Phenylalanine", group:10} }, { data: {id:"L-Isoleucine", group:10} }, { data: {id:"L-Glutamine", group:10} }, { data: {id:"R-S-Glutathione", group:10} }, { data: {id:"3-Sulfino-L-alanine", group:10} }, { data: {id:"6-Acetamido-2-oxohexanoate", group:10} }, { data: {id:"2-(Formamido)-N1-(5-phospho-D-ribosyl)acetamidine", group:10} }, { data: {id:"3-Methyl-2-oxobutanoate", group:10} }, { data: {id:"N2-Formyl-N1-(5-phospho-D-ribosyl)glycinamide", group:10} }, { data: {id:"5-Phospho-alpha-D-ribose 1-diphosphate", group:10} }, { data: {id:"R-S-Cysteinylglycine", group:10} }, { data: {id:"Acetyl-CoA", group:10} }, { data: {id:"Dihydropteroate", group:10} }, { data: {id:"beta-Alanine", group:10} }, { data: {id:"3-(4-Hydroxyphenyl)pyruvate", group:10} }, { data: {id:"N6-Acetyl-L-lysine", group:10} }, { data: {id:"xanthurenate-8-O-beta-D-glucoside", group:10} }, { data: {id:"GMP", group:10} }, { data: {id:"2-keto-4-methylthiobutyrate", group:10} }, { data: {id:"NH4+", group:10} }, { data: {id:"Oxaloacetate", group:10} }, { data: {id:"Cys-Gly", group:10} }, { data: {id:"Tetrahydrofolyl-[Glu](n)", group:10} }, { data: {id:"2-Oxo-3-hydroxy-4-phosphobutanoate", group:10} }, { data: {id:"L-Leucine", group:10} }, { data: {id:"L-Aspartate", group:10} }, { data: {id:"10-Formyltetrahydrofolate", group:10} }, { data: {id:"leukotriene F4", group:10} }, { data: {id:"leukotriene C5", group:10} }, { data: {id:"L-2-Aminoadipate", group:10} }, { data: {id:"Leukotriene C4", group:10} }, { data: {id:"3-Sulfopyruvate", group:10} }, { data: {id:"Ornithine", group:10} }, { data: {id:"3-Phosphohydroxypyruvate", group:10} }, { data: {id:"L-3-Amino-isobutanoate", group:10} }, { data: {id:"3-Methyl-2-oxopentanoate", group:10} }, { data: {id:"N6-(L-1,3-Dicarboxypropyl)-L-lysine", group:10} }, { data: {id:"N-Succinyl-L-glutamate 5-semialdehyde", group:10} }, { data: {id:"2-Oxoadipate", group:10} }, { data: {id:"4-Methyl-2-oxopentanoate", group:10} }, { data: {id:"pentaglutamyl folate (DHF)", group:10} }, { data: {id:"(S)-3-Methyl-2-oxopentanoate", group:10} }, { data: {id:"Deamino-NAD+", group:10} }, { data: {id:"4-Hydroxy-2-oxoglutarate", group:10} }, { data: {id:"(S)-2-Aminobutanoate", group:10} }, { data: {id:"L-Alanine", group:10} }, { data: {id:"Coenzyme A", group:10} }, { data: {id:"10-formyltetrahydrofolate-[Glu](5)", group:10} }, { data: {id:"Succinate semialdehyde", group:10} }, { data: {id:"N2-Succinyl-L-ornithine", group:10} }, { data: {id:"Carbamoyl phosphate", group:10} }, { data: {id:"L-Methionine", group:10} }, { data: {id:"(S)-Methylmalonate semialdehyde", group:10} }, { data: {id:"Ornithine", group:10} }, { data: {id:"D-Glucosamine 6-phosphate", group:10} }, { data: {id:"D-3-Amino-isobutanoate", group:10} }, { data: {id:"Beta cyanoalanine", group:10} }, { data: {id:"Mercaptopyruvate", group:10} }, { data: {id:"hexaglutamyl folate  (THF)", group:10} }, { data: {id:"Xanthurenic acid", group:10} }, { data: {id:"5,6,7,8-Tetrahydrofolate", group:10} }, { data: {id:"L-2-Aminoadipate 6-semialdehyde", group:10} }, { data: {id:"L-Glutamyl-tRNA(Glu)", group:10} }, { data: {id:"Reduced glutathione", group:10} }, { data: {id:"L-Cysteine", group:10} }, { data: {id:"2-Oxobutanoate", group:10} }, { data: {id:"L-Valine", group:10} }, { data: {id:"tRNA (Glu)", group:10} }, { data: {id:"4-(2-Amino-3-hydroxyphenyl)-2,4-dioxobutanoate", group:10} }, { data: {id:"O-Phospho-4-hydroxy-L-threonine", group:10} }, { data: {id:"5-Formyltetrahydrofolate", group:10} }, { data: {id:"L-Glutamyl 5-phosphate", group:10} }, { data: {id:"L-erythro-4-Hydroxyglutamate", group:10} }, { data: {id:"N-Acetyl-L-glutamate", group:10} }, { data: {id:"3-Oxopropanoate", group:10} }, { data: {id:"C05829", group:10} }, { data: {id:"L-Asparagine", group:10} }, { data: {id:"Phenylpyruvate", group:10} }, { data: {id:"gamma-L-Glutamyl-L-cysteine", group:10} }, { data: {id:"heptaglutamyl folate (THF)", group:10} }, { data: {id:"2-Methyl-3-oxopropanoate", group:10} }, { data: {id:"6-Thioguanosine monophosphate", group:10} }, { data: {id:"2-Oxo acid", group:10} }, { data: {id:"6-Thioxanthine 5'-monophosphate", group:10} }, { data: {id:"gamma-Glutamyl-beta-cyanoalanine", group:10} }, { data: {id:"pentaglutamyl folate (THF)", group:10} }, { data: {id:"L-4-Hydroxyglutamate semialdehyde", group:2} }, { data: {id:"L-Proline", group:10} }, { data: {id:"Reduced acceptor", group:10} }, { data: {id:"Acceptor", group:10} }, { data: {id:"L-1-Pyrroline-3-hydroxy-5-carboxylate", group:10} }, { data: {id:"D-Glutamate", group:2} }, { data: {id:"D-Glutamine", group:10} }, { data: {id:"5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate", group:18} }, { data: {id:"(S)-2-[5-Amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido]succinate", group:10} }, { data: {id:"5-amino-1-(5-phospho-D-ribosyl)imidazole", group:10} }, ], ];
+
+        var cytoedges = [[{ data: { id: "C00025-C00415", weight: 1, source: "L-Glutamate", target: "7,8-Dihydrofolate" } }, { data: { id: "C00025-C00014", weight: 1, source: "L-Glutamate", target: "Ammonium" } }, { data: { id: "C00025-C01252", weight: 1, source: "L-Glutamate", target: "4-(2-Aminophenyl)-2,4-dioxobutanoate" } }, { data: { id: "C00025-C00334", weight: 1, source: "L-Glutamate", target: "4-Aminobutanoate" } }, { data: { id: "C00025-C01879", weight: 1, source: "L-Glutamate", target: "5-Oxoproline" } }, { data: { id: "C00025-C01005", weight: 1, source: "L-Glutamate", target: "O-Phospho-L-serine" } }, { data: { id: "C00025-C00655", weight: 1, source: "L-Glutamate", target: "Xanthosine 5'-phosphate" } }, { data: { id: "C00025-C00026", weight: 1, source: "L-Glutamate", target: "2-Oxoglutarate" } }, { data: { id: "C00025-C00288", weight: 1, source: "L-Glutamate", target: "Bicarbonate" } }, { data: { id: "C00025-C05527", weight: 1, source: "L-Glutamate", target: "3-Sulfinopyruvate" } }, { data: { id: "C00025-C05951", weight: 1, source: "L-Glutamate", target: "Leukotriene D4" } }, { data: { id: "C00025-C00082", weight: 1, source: "L-Glutamate", target: "L-Tyrosine" } }, { data: { id: "C00025-C03090", weight: 1, source: "L-Glutamate", target: "5-Phospho-beta-D-ribosylamine" } }, { data: { id: "C00025-C09332", weight: 1, source: "L-Glutamate", target: "Tetrahydrofolyl-[Glu](2)" } }, { data: { id: "C00025-leuktrE4", weight: 1, source: "L-Glutamate", target: "leukotriene E4" } }, { data: { id: "C00025-C00020", weight: 1, source: "L-Glutamate", target: "AMP" } }, { data: { id: "C00025-C00664", weight: 1, source: "L-Glutamate", target: "5-Formiminotetrahydrofolate" } }, { data: { id: "C00025-C01127", weight: 1, source: "L-Glutamate", target: "4-Hydroxy-2-oxoglutarate" } }, { data: { id: "C00025-C00063", weight: 1, source: "L-Glutamate", target: "CTP" } }, { data: { id: "C00025-C01165", weight: 1, source: "L-Glutamate", target: "L-Glutamate 5-semialdehyde" } }, { data: { id: "C00025-C01640", weight: 1, source: "L-Glutamate", target: "tRNA(Gln)" } }, { data: { id: "C00025-CE7087", weight: 1, source: "L-Glutamate", target: "leukotriene D5" } }, { data: { id: "C00025-C03912", weight: 1, source: "L-Glutamate", target: "1-Pyrroline-5-carboxylate" } }, { data: { id: "C00025-C00085", weight: 1, source: "L-Glutamate", target: "D-Fructose 6-phosphate" } }, { data: { id: "C00025-C00022", weight: 1, source: "L-Glutamate", target: "Pyruvate" } }, { data: { id: "C00025-C05167", weight: 1, source: "L-Glutamate", target: "alpha-Amino acid" } }, { data: { id: "C00025-C01717", weight: 1, source: "L-Glutamate", target: "4-Hydroxy-2-quinolinecarboxylic acid" } }, { data: { id: "C00025-CE2095", weight: 1, source: "L-Glutamate", target: "3-hydroxykynurenine-O-beta-D-glucoside" } }, { data: { id: "C00025-C00439", weight: 1, source: "L-Glutamate", target: "N-Formimidoyl-L-glutamate" } }, { data: { id: "C00025-C03227", weight: 1, source: "L-Glutamate", target: "3-Hydroxy-L-kynurenine" } }, { data: { id: "C00025-C06112", weight: 1, source: "L-Glutamate", target: "L-Glutamyl-tRNA(Gln)" } }, { data: { id: "C00025-C01045", weight: 1, source: "L-Glutamate", target: "N-Formyl-L-glutamate" } }, { data: { id: "C00025-C00075", weight: 1, source: "L-Glutamate", target: "UTP" } }, { data: { id: "C00025-C00328", weight: 1, source: "L-Glutamate", target: "L-Kynurenine" } }, { data: { id: "C00025-C05928", weight: 1, source: "L-Glutamate", target: "10-Formyltetrahydrofolyl L-glutamate" } }, { data: { id: "C00025-C05929", weight: 1, source: "L-Glutamate", target: "10-Formyltetrahydrofolylpolyglutamate" } }, { data: { id: "C00025-C00506", weight: 1, source: "L-Glutamate", target: "L-Cysteate" } }, { data: { id: "C00025-C00079", weight: 1, source: "L-Glutamate", target: "L-Phenylalanine" } }, { data: { id: "C00025-C00407", weight: 1, source: "L-Glutamate", target: "L-Isoleucine" } }, { data: { id: "C00025-C00064", weight: 1, source: "L-Glutamate", target: "L-Glutamine" } }, { data: { id: "C00025-C02320", weight: 1, source: "L-Glutamate", target: "R-S-Glutathione" } }, { data: { id: "C00025-C00606", weight: 1, source: "L-Glutamate", target: "3-Sulfino-L-alanine" } }, { data: { id: "C00025-C05548", weight: 1, source: "L-Glutamate", target: "6-Acetamido-2-oxohexanoate" } }, { data: { id: "C00025-C04640", weight: 1, source: "L-Glutamate", target: "2-(Formamido)-N1-(5-phospho-D-ribosyl)acetamidine" } }, { data: { id: "C00025-C00141", weight: 1, source: "L-Glutamate", target: "3-Methyl-2-oxobutanoate" } }, { data: { id: "C00025-C04376", weight: 1, source: "L-Glutamate", target: "N2-Formyl-N1-(5-phospho-D-ribosyl)glycinamide" } }, { data: { id: "C00025-C00119", weight: 1, source: "L-Glutamate", target: "5-Phospho-alpha-D-ribose 1-diphosphate" } }, { data: { id: "C00025-C05729", weight: 1, source: "L-Glutamate", target: "R-S-Cysteinylglycine" } }, { data: { id: "C00025-C00024", weight: 1, source: "L-Glutamate", target: "Acetyl-CoA" } }, { data: { id: "C00025-C00921", weight: 1, source: "L-Glutamate", target: "Dihydropteroate" } }, { data: { id: "C00025-C00099", weight: 1, source: "L-Glutamate", target: "beta-Alanine" } }, { data: { id: "C00025-C01179", weight: 1, source: "L-Glutamate", target: "3-(4-Hydroxyphenyl)pyruvate" } }, { data: { id: "C00025-C02727", weight: 1, source: "L-Glutamate", target: "N6-Acetyl-L-lysine" } }, { data: { id: "C00025-CE2947", weight: 1, source: "L-Glutamate", target: "xanthurenate-8-O-beta-D-glucoside" } }, { data: { id: "C00025-C00144", weight: 1, source: "L-Glutamate", target: "GMP" } }, { data: { id: "C00025-C01180", weight: 1, source: "L-Glutamate", target: "2-keto-4-methylthiobutyrate" } }, { data: { id: "C00025-C01342", weight: 1, source: "L-Glutamate", target: "NH4+" } }, { data: { id: "C00025-C00036", weight: 1, source: "L-Glutamate", target: "Oxaloacetate" } }, { data: { id: "C00025-C01419", weight: 1, source: "L-Glutamate", target: "Cys-Gly" } }, { data: { id: "C00025-C03541", weight: 1, source: "L-Glutamate", target: "Tetrahydrofolyl-[Glu](n)" } }, { data: { id: "C00025-C06054", weight: 1, source: "L-Glutamate", target: "2-Oxo-3-hydroxy-4-phosphobutanoate" } }, { data: { id: "C00025-C00123", weight: 1, source: "L-Glutamate", target: "L-Leucine" } }, { data: { id: "C00025-C00049", weight: 1, source: "L-Glutamate", target: "L-Aspartate" } }, { data: { id: "C00025-C00234", weight: 1, source: "L-Glutamate", target: "10-Formyltetrahydrofolate" } }, { data: { id: "C00025-leuktrF4", weight: 1, source: "L-Glutamate", target: "leukotriene F4" } }, { data: { id: "C00025-CE7086", weight: 1, source: "L-Glutamate", target: "leukotriene C5" } }, { data: { id: "C00025-C00956", weight: 1, source: "L-Glutamate", target: "L-2-Aminoadipate" } }, { data: { id: "C00025-leuktrC4", weight: 1, source: "L-Glutamate", target: "Leukotriene C4" } }, { data: { id: "C00025-3spyr", weight: 1, source: "L-Glutamate", target: "3-Sulfopyruvate" } }, { data: { id: "C00025-C01602", weight: 1, source: "L-Glutamate", target: "Ornithine" } }, { data: { id: "C00025-C03232", weight: 1, source: "L-Glutamate", target: "3-Phosphohydroxypyruvate" } }, { data: { id: "C00025-C03284", weight: 1, source: "L-Glutamate", target: "L-3-Amino-isobutanoate" } }, { data: { id: "C00025-C03465", weight: 1, source: "L-Glutamate", target: "3-Methyl-2-oxopentanoate" } }, { data: { id: "C00025-C00449", weight: 1, source: "L-Glutamate", target: "N6-(L-1,3-Dicarboxypropyl)-L-lysine" } }, { data: { id: "C00025-C05932", weight: 1, source: "L-Glutamate", target: "N-Succinyl-L-glutamate 5-semialdehyde" } }, { data: { id: "C00025-C00322", weight: 1, source: "L-Glutamate", target: "2-Oxoadipate" } }, { data: { id: "C00025-C00233", weight: 1, source: "L-Glutamate", target: "4-Methyl-2-oxopentanoate" } }, { data: { id: "C00025-5dhf", weight: 1, source: "L-Glutamate", target: "pentaglutamyl folate (DHF)" } }, { data: { id: "C00025-C00671", weight: 1, source: "L-Glutamate", target: "(S)-3-Methyl-2-oxopentanoate" } }, { data: { id: "C00025-C00857", weight: 1, source: "L-Glutamate", target: "Deamino-NAD+" } }, { data: { id: "C00025-C05946", weight: 1, source: "L-Glutamate", target: "4-Hydroxy-2-oxoglutarate" } }, { data: { id: "C00025-C02356", weight: 1, source: "L-Glutamate", target: "(S)-2-Aminobutanoate" } }, { data: { id: "C00025-C00041", weight: 1, source: "L-Glutamate", target: "L-Alanine" } }, { data: { id: "C00025-C00010", weight: 1, source: "L-Glutamate", target: "Coenzyme A" } }, { data: { id: "C00025-10fthf5glu", weight: 1, source: "L-Glutamate", target: "10-formyltetrahydrofolate-[Glu](5)" } }, { data: { id: "C00025-C00232", weight: 1, source: "L-Glutamate", target: "Succinate semialdehyde" } }, { data: { id: "C00025-C03415", weight: 1, source: "L-Glutamate", target: "N2-Succinyl-L-ornithine" } }, { data: { id: "C00025-C00169", weight: 1, source: "L-Glutamate", target: "Carbamoyl phosphate" } }, { data: { id: "C00025-C00073", weight: 1, source: "L-Glutamate", target: "L-Methionine" } }, { data: { id: "C00025-C06002", weight: 1, source: "L-Glutamate", target: "(S)-Methylmalonate semialdehyde" } }, { data: { id: "C00025-C00077", weight: 1, source: "L-Glutamate", target: "Ornithine" } }, { data: { id: "C00025-C00352", weight: 1, source: "L-Glutamate", target: "D-Glucosamine 6-phosphate" } }, { data: { id: "C00025-C01205", weight: 1, source: "L-Glutamate", target: "D-3-Amino-isobutanoate" } }, { data: { id: "C00025-C02512", weight: 1, source: "L-Glutamate", target: "Beta cyanoalanine" } }, { data: { id: "C00025-C00957", weight: 1, source: "L-Glutamate", target: "Mercaptopyruvate" } }, { data: { id: "C00025-6thf", weight: 1, source: "L-Glutamate", target: "hexaglutamyl folate  (THF)" } }, { data: { id: "C00025-C02470", weight: 1, source: "L-Glutamate", target: "Xanthurenic acid" } }, { data: { id: "C00025-C00101", weight: 1, source: "L-Glutamate", target: "5,6,7,8-Tetrahydrofolate" } }, { data: { id: "C00025-C04076", weight: 1, source: "L-Glutamate", target: "L-2-Aminoadipate 6-semialdehyde" } }, { data: { id: "C00025-C02987", weight: 1, source: "L-Glutamate", target: "L-Glutamyl-tRNA(Glu)" } }, { data: { id: "C00025-C00051", weight: 1, source: "L-Glutamate", target: "Reduced glutathione" } }, { data: { id: "C00025-C00097", weight: 1, source: "L-Glutamate", target: "L-Cysteine" } }, { data: { id: "C00025-C00109", weight: 1, source: "L-Glutamate", target: "2-Oxobutanoate" } }, { data: { id: "C00025-C00183", weight: 1, source: "L-Glutamate", target: "L-Valine" } }, { data: { id: "C00025-C01641", weight: 1, source: "L-Glutamate", target: "tRNA (Glu)" } }, { data: { id: "C00025-C05645", weight: 1, source: "L-Glutamate", target: "4-(2-Amino-3-hydroxyphenyl)-2,4-dioxobutanoate" } }, { data: { id: "C00025-C06055", weight: 1, source: "L-Glutamate", target: "O-Phospho-4-hydroxy-L-threonine" } }, { data: { id: "C00025-C03479", weight: 1, source: "L-Glutamate", target: "5-Formyltetrahydrofolate" } }, { data: { id: "C00025-C03287", weight: 1, source: "L-Glutamate", target: "L-Glutamyl 5-phosphate" } }, { data: { id: "C00025-C05947", weight: 1, source: "L-Glutamate", target: "L-erythro-4-Hydroxyglutamate" } }, { data: { id: "C00025-C00624", weight: 1, source: "L-Glutamate", target: "N-Acetyl-L-glutamate" } }, { data: { id: "C00025-C00222", weight: 1, source: "L-Glutamate", target: "3-Oxopropanoate" } }, { data: { id: "C00025-C05829", weight: 1, source: "L-Glutamate", target: "C05829" } }, { data: { id: "C00025-C00152", weight: 1, source: "L-Glutamate", target: "L-Asparagine" } }, { data: { id: "C00025-C00166", weight: 1, source: "L-Glutamate", target: "Phenylpyruvate" } }, { data: { id: "C00025-C00669", weight: 1, source: "L-Glutamate", target: "gamma-L-Glutamyl-L-cysteine" } }, { data: { id: "C00025-7thf", weight: 1, source: "L-Glutamate", target: "heptaglutamyl folate (THF)" } }, { data: { id: "C00025-C00349", weight: 1, source: "L-Glutamate", target: "2-Methyl-3-oxopropanoate" } }, { data: { id: "C00025-C16619", weight: 1, source: "L-Glutamate", target: "6-Thioguanosine monophosphate" } }, { data: { id: "C00025-C00161", weight: 1, source: "L-Glutamate", target: "2-Oxo acid" } }, { data: { id: "C00025-C16618", weight: 1, source: "L-Glutamate", target: "6-Thioxanthine 5'-monophosphate" } }, { data: { id: "C00025-C05711", weight: 1, source: "L-Glutamate", target: "gamma-Glutamyl-beta-cyanoalanine" } }, { data: { id: "C00025-5thf", weight: 1, source: "L-Glutamate", target: "pentaglutamyl folate (THF)" } }, { data: { id: "C00014-C00217", weight: 1, source: "Ammonium", target: "D-Glutamate" } }, { data: { id: "C03912-C05938", weight: 1, source: "1-Pyrroline-5-carboxylate", target: "L-4-Hydroxyglutamate semialdehyde" } }, { data: { id: "C00049-C04751", weight: 1, source: "L-Aspartate", target: "5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate" } }, { data: { id: "C05947-C05938", weight: 1, source: "L-erythro-4-Hydroxyglutamate", target: "L-4-Hydroxyglutamate semialdehyde" } }, { data: { id: "C05938-C00148", weight: 1, source: "L-4-Hydroxyglutamate semialdehyde", target: "L-Proline" } }, { data: { id: "C05938-C00030", weight: 1, source: "L-4-Hydroxyglutamate semialdehyde", target: "Reduced acceptor" } }, { data: { id: "C05938-C00028", weight: 1, source: "L-4-Hydroxyglutamate semialdehyde", target: "Acceptor" } }, { data: { id: "C05938-C04281", weight: 1, source: "L-4-Hydroxyglutamate semialdehyde", target: "L-1-Pyrroline-3-hydroxy-5-carboxylate" } }, { data: { id: "C00217-C00819", weight: 1, source: "D-Glutamate", target: "D-Glutamine" } }, { data: { id: "C04751-C04823", weight: 1, source: "5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate", target: "(S)-2-[5-Amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamido]succinate" } }, { data: { id: "C04751-C03373", weight: 1, source: "5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate", target: "5-amino-1-(5-phospho-D-ribosyl)imidazole" } }, ], ];
+
+
+        var w = 960, h = 600;
+        var color = d3.scale.category20b();
+        var node_sizes = [16, 8, 32]
+        
+        var scalebar = d3.select("#colorbar").append("svg").attr("id", "svg_colorbar").attr("width", w).attr("height", 10);
+        var coloridx = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
+        scalebar.selectAll("rect")
+           .data(coloridx)
+           .enter()
+           .append("rect")
+           .attr("x", function(d, i) {return i * 48;})
+           .attr("y", 0)
+           .attr("width", 48)
+           .attr("height", 10)
+           .attr("fill", function(d, i) { return color(i); });
+           
+        //user input plots
+        var data = JSON.parse(alldata);
+        makeMZUserInputPlot();
+        makeRetTimeUserInputPlot();
+
+        //Pathway Bar chart plot
+        makePathwayPlot()
+        
+        // initial draw
+        cyto_draw_figure(cytonodes[0], cytoedges[0], node_sizes[0]);
+    	var cy = $('#networkvisual').cytoscape('get');
+    	cy.panBy({ x: 0, y: -200 });
+    	
+        // support cytoscape.js  
+		function cyto_draw_figure(nodes, links, node_size) {  
+
+                    var svg = document.createElement('div');
+                    svg.setAttribute("id","svg2");
+                    svg.setAttribute("class","svg2");
+                    var nw = document.getElementById("networkvisual");
+                    nw.appendChild(svg);
+
+				$('#svg2').cytoscape({
+						style: cytoscape.stylesheet()
+						.selector('node')
+						  .css({
+							'content': 'data(id)',
+							'font-size': node_size,
+							'min-zoomed-font-size': 8,
+							'background-color': 'mapData(group, 0, 19, blue, red)'
+						  })
+						.selector('edge')
+						  .css({
+							'target-arrow-shape': 'triangle',
+							'width': 4,
+							'line-color': '#ddd',
+							'target-arrow-color': '#ddd'
+						  })
+						.selector('.highlighted')
+						  .css({
+							'background-color': '#61bffc',
+							'line-color': '#61bffc',
+							'target-arrow-color': '#61bffc',
+							'transition-property': 'background-color, line-color, target-arrow-color',
+							'transition-duration': '0.5s'
+						  }),
+  
+					  layout: {
+						name: 'spread',
+						minDist: 40,
+						directed: true,
+						padding: 10,
+						//fit: false,
+					  },
+					  
+					  elements: {
+						  nodes: nodes, 
+						  edges: links
+						},
+  
+					  zoom: 1,
+					  minZoom: 0.1,
+ 					  maxZoom: 5,
+
+				});
+	
+		}
+	
+
+        // support d3.js  
+        function d3_draw_figure(nodes, links, node_size) {
+
+            var svg = document.createElement('div');
+            svg.setAttribute("id","svg2");
+            svg.setAttribute("class","svg2");
+            var nw = document.getElementById("networkvisual");
+            nw.appendChild(svg);
+
+            var svg = d3.select("#svg2").append("svg").attr("id", "svg_networkvisual").attr("width", w).attr("height", h);
+            var force = d3.layout.force()
+                      .charge(-480)
+                      .linkDistance(80)
+                      .gravity(0.3)
+                      .size([w, h]);
+    
+            force.nodes(nodes)
+              .links(links)
+              .start();
+            
+            var link = svg.selectAll(".link")
+              .data(links)
+              .enter().append("line")
+              .attr("class", "link")
+              .style("stroke-width", 2);
+            
+            var node = svg.selectAll(".node")
+              .data(nodes)
+              .enter().append("circle")
+              .attr("class", "node")
+              .attr("r", node_size)
+              .style("fill", function(d) { return color(d.group); })
+              .style("fill-opacity", .6)
+              .call(force.drag);
+            
+            var text = svg.selectAll(".text")
+              .data(nodes)
+              .enter().append("text")
+              .attr("font-family", "sans-serif")
+              .attr("font-size", "9px")
+              .attr("text-anchor", "middle")
+              .text(function(d) { return d.name; });
+            
+            force.on("tick", function() {
+                link.attr("x1", function(d) { return d.source.x; })
+                    .attr("y1", function(d) { return d.source.y; })
+                    .attr("x2", function(d) { return d.target.x; })
+                    .attr("y2", function(d) { return d.target.y; });
+            
+                node.attr("cx", function(d) { return d.x; })
+                    .attr("cy", function(d) { return d.y; });
+            
+                text.attr("x", function(d) { return d.x; })
+                    .attr("y", function(d) { return d.y; });
+              });
+        }
+    
+    
+        function inv(i) {
+           if (i==0)
+              return 0
+           else if (i==1)
+              return 2
+           else
+              return 1
+}
+
+    	// added support of two styles
+        function updateDrawing() {
+            var idx = document.getElementById("nmodule_select").selectedIndex;
+            var ndx = document.getElementById("nsize_select").selectedIndex;
+            var vdx = document.getElementById("vstyle_select").selectedIndex;
+            
+            //d3.select("#svg_networkvisual").remove();
+            var svg = document.getElementById("svg2");
+	    svg.parentNode.removeChild(svg);
+
+            //var cy = $('#networkvisual').cytoscape('get');
+            //cy.remove( cy.elements() );
+            
+            // 0 for cytoscape style, drag; 1 for d3 style, force
+            if (vdx == 0) {
+            cyto_draw_figure(cytonodes[idx], cytoedges[idx], node_sizes[inv(ndx)]);
+            
+    		var cy = $('#networkvisual').cytoscape('get');
+    		cy.panBy({ x: 0, y: -200 });
+            
+            } else {
+            d3_draw_figure(nodes[idx], links[idx], node_sizes[ndx]);
+            }
+        }
+    
+    </script>
+    </body> </html> 

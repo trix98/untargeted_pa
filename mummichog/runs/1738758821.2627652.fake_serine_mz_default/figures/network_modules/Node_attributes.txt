@@ -1,0 +1,12 @@
+CPD_ID	CPD_NAME	mz_row_Statistic	From_mz_row	From_EmpiricalCompound
+C06078		4.662505546059164	row638	E101
+C00025	L-Glutamate	-3.422834433	row986	E210
+C06099	(+)-Limonene; (+)-(R)-Limonene; (+)-(4R)-Limonene	3.6818074475194655	row639	E100
+C05938	L-4-Hydroxyglutamate semialdehyde	-3.422834433	row986	E210
+C00217	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid	-3.422834433	row986	E210
+C00521	(-)-Limonene; (-)-(S)-Limonene; (-)-(4S)-Limonene	3.6818074475194655	row639	E100
+C06099	(+)-Limonene; (+)-(R)-Limonene; (+)-(4R)-Limonene	4.662505546059164	row638	E101
+C00521	(-)-Limonene; (-)-(S)-Limonene; (-)-(4S)-Limonene	4.662505546059164	row638	E101
+C06078		3.6818074475194655	row639	E100
+C00366	Urate	-3.578454833	row975	E205
+C04751	5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxylate	4.506695711216134	row2398	E211
