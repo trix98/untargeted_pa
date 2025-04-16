@@ -1,0 +1,108 @@
+CPD_ID	CPD_NAME	mz_row_Statistic	From_mz_row	From_EmpiricalCompound
+clpnd	clupanodonic acid	4.4069696117641675	row7265	E1667
+C00637	Indole-3-acetaldehyde	5.325768667083785	row2334	E649
+ttdcea	tetradecenoate (n-C14:1)	4.22602622331871	row4681	E1200
+C00645	N-Acetyl-D-mannosamine; 2-Acetamido-2-deoxy-D-mannose	5.373662667444362	row3983	E1175
+C16596	5-Phenyl-1,3-oxazinane-2,4-dione	5.536385472401456	row3226	E961
+C05635	5-Hydroxyindoleacetate	5.536385472401456	row3226	E961
+C00170	5-Methylthioadenosine	5.897649551679533	row6286	E1530
+CE5528		4.207379820264887	row7316	E737
+C01074	N-Acetylgalactosamine; N-Acetylchondrosamine; 2-Acetamido-2-deoxygalactose; GalNAc	4.460227317113566	row4555	E1174
+C03765	4-Hydroxyphenylacetaldehyde	5.463132920262673	row3553	E387
+ocdcea	octadecenoate (n-C18:1)	4.747251167606731	row5738	E1450
+C00712	(9Z)-Octadecenoic acid; (Z)-Octadec-9-enoic acid; Oleate; Oleic acid	5.0973396021653015	row5812	E580
+C05583	3-Methoxy-4-hydroxyphenylglycolaldehyde	5.463132920262673	row3553	E876
+CE4839	6,9,12,15,18-all-cis-tetracosapentaenoate	-5.084224047748262	row8464	E1767
+C05647	Formyl-5-hydroxykynurenamine	4.534746507980137	row3673	E1113
+C00086	Urea	5.188954516915177	row184	E57
+CE5922		4.618445545419582	row7199	E1661
+CE5013		5.129569199069776	row6512	E1550
+adrn	adrenic acid	5.526442744243173	row8964	E1681
+C05638	5-Hydroxykynurenamine	4.535128381302167	row2900	E861
+C16596	5-Phenyl-1,3-oxazinane-2,4-dione	4.42074960299003	row3196	E960
+C05635	5-Hydroxyindoleacetate	4.42074960299003	row3196	E960
+C01595	linoleic acid (all cis C18:2) n-6	5.134227470763032	row6484	E1454
+C00645	N-Acetyl-D-mannosamine; 2-Acetamido-2-deoxy-D-mannose	4.460227317113566	row4555	E1174
+CE2006		4.426399036091382	row2253	E86
+C16300	Stearidonic acid; 6,9,12,15-Octadecatetraenoic acid; (6Z,9Z,12Z,15Z)-Octadecatetraenoic acid	4.2668269145428654	row5586	E407
+C01595	linoleic acid (all cis C18:2) n-6	4.673908775704853	row6485	E1454
+C06428	(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid; (5Z,8Z,11Z,14Z,17Z)-Eicosapentaenoic acid; Eicosapentaenoic acid; 5,8,11,14,17-Icosapentaenoic acid; (5Z,8Z,11Z,14Z,17Z)-Eicosapentaenoate	5.129569199069776	row6512	E1550
+C00328	L-Kynurenine	4.534746507980137	row3673	E1113
+C01595	linoleic acid (all cis C18:2) n-6	4.747251167606731	row5738	E1454
+CE5013		5.040482285395977	row6515	E1550
+C06426	(6Z,9Z,12Z)-Octadecatrienoic acid; 6,9,12-Octadecatrienoic acid; gamma-Linolenic acid; Gamolenic acid	5.03703688009154	row5659	E545
+CE6504		4.5457253692359965	row8130	E1722
+C00712	(9Z)-Octadecenoic acid; (Z)-Octadec-9-enoic acid; Oleate; Oleic acid	4.946863390881305	row5842	E580
+C00140	N-Acetyl-D-glucosamine	5.373662667444362	row3983	E1175
+C14827	9(S)-HPODE; 9(S)-HPOD; (10E,12Z)-(9S)-9-Hydroperoxyoctadeca-10,12-dienoic acid	4.426399036091382	row2253	E624
+tetpent6	tetracosapentaenoic acid, n-6	-5.084224047748262	row8464	E1767
+CE6506		4.426399036091382	row2253	E86
+C05660	5-Methoxyindoleacetate	5.623705881755428	row3618	E1072
+CE5013		4.673908775704853	row6485	E1550
+C14826	12(13)-EpOME; (12R,13S)-(9Z)-12,13-Epoxyoctadecenoic acid	4.2843478567151845	row6272	E1526
+C06428	(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid; (5Z,8Z,11Z,14Z,17Z)-Eicosapentaenoic acid; Eicosapentaenoic acid; 5,8,11,14,17-Icosapentaenoic acid; (5Z,8Z,11Z,14Z,17Z)-Eicosapentaenoate	5.040482285395977	row6515	E1550
+C05647	Formyl-5-hydroxykynurenamine	5.016006078447862	row3694	E1113
+C06429	(4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid; 4,7,10,13,16,19-Docosahexaenoic acid; Docosahexaenoic acid	5.66865590496706	row2500	E707
+C00402	D-Aspartate	-4.309394811081971	row2224	E613
+C00643	5-Hydroxy-L-tryptophan	5.194011229041714	row3954	E1165
+C04282	1-Pyrroline-4-hydroxy-2-carboxylate	4.365991673825187	row2155	E318
+C06428	(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid; (5Z,8Z,11Z,14Z,17Z)-Eicosapentaenoic acid; Eicosapentaenoic acid; 5,8,11,14,17-Icosapentaenoic acid; (5Z,8Z,11Z,14Z,17Z)-Eicosapentaenoate	4.673908775704853	row6485	E1550
+C06427	(9Z,12Z,15Z)-Octadecatrienoic acid; alpha-Linolenic acid; 9,12,15-Octadecatrienoic acid; Linolenate; alpha-Linolenate	5.03703688009154	row5659	E545
+C05635	5-Hydroxyindoleacetate	6.110790604939488	row3254	E960
+C06426	(6Z,9Z,12Z)-Octadecatrienoic acid; 6,9,12-Octadecatrienoic acid; gamma-Linolenic acid; Gamolenic acid	5.20055465927608	row6406	E545
+ocdcea	octadecenoate (n-C18:1)	5.040482285395977	row6515	E1450
+C05660	5-Methoxyindoleacetate	5.609346372996795	row3587	E1072
+C01595	linoleic acid (all cis C18:2) n-6	4.491084507796746	row5765	E1453
+C02075	Retinyl ester; all-trans-Retinyl ester	5.129569199069776	row6512	E1550
+C16596	5-Phenyl-1,3-oxazinane-2,4-dione	5.14941054270163	row3253	E961
+C00328	L-Kynurenine	5.016006078447862	row3694	E1113
+C05660	5-Methoxyindoleacetate	5.393989103642594	row4136	E1072
+C05635	5-Hydroxyindoleacetate	5.14941054270163	row3253	E961
+C00140	N-Acetyl-D-glucosamine	4.460227317113566	row4555	E1174
+CE5013		5.134227470763032	row6484	E1550
+C00049	L-Aspartate	-4.309394811081971	row2224	E613
+CE3087	beta-carboline	4.42074960299003	row3196	E772
+C16300	Stearidonic acid; 6,9,12,15-Octadecatetraenoic acid; (6Z,9Z,12Z,15Z)-Octadecatetraenoic acid	4.411136714205094	row5585	E406
+C02075	Retinyl ester; all-trans-Retinyl ester	5.040482285395977	row6515	E1550
+C16612	Citalopram aldehyde	4.335022655720577	row6899	E512
+C01595	linoleic acid (all cis C18:2) n-6	4.51012014540304	row5736	E1453
+C00249	Hexadecanoate (n-C16:0)	5.03703688009154	row5659	E1367
+vacc	vaccenic acid	4.747251167606731	row5738	E1450
+C03242	(8Z,11Z,14Z)-Icosatrienoic acid; Dihomo-gamma-linolenic acid; (Z,Z,Z)-8,11,14-Eicosatrienoic acid; (Z,Z,Z)-8,11,14-Icosatrienoic acid; (Z,Z,Z)-8,11,14-Eicosatrienoate; (Z,Z,Z)-8,11,14-Icosatrienoate; 8,11,14-Eicosatrienoate; 8,11,14-Icosatrienoate	5.66865590496706	row2500	E697
+C06428	(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid; (5Z,8Z,11Z,14Z,17Z)-Eicosapentaenoic acid; Eicosapentaenoic acid; 5,8,11,14,17-Icosapentaenoic acid; (5Z,8Z,11Z,14Z,17Z)-Eicosapentaenoate	5.134227470763032	row6484	E1550
+CE5932	13,14-epoxy-retinol	5.129569199069776	row6512	E1550
+C00147	Adenine	6.068504910510025	row1694	E374
+C00637	Indole-3-acetaldehyde	5.393989103642594	row4136	E649
+C06426	(6Z,9Z,12Z)-Octadecatrienoic acid; 6,9,12-Octadecatrienoic acid; gamma-Linolenic acid; Gamolenic acid	4.998271259797492	row5699	E545
+C00712	(9Z)-Octadecenoic acid; (Z)-Octadec-9-enoic acid; Oleate; Oleic acid	4.797656172011967	row5811	E581
+C06427	(9Z,12Z,15Z)-Octadecatrienoic acid; alpha-Linolenic acid; 9,12,15-Octadecatrienoic acid; Linolenate; alpha-Linolenate	5.20055465927608	row6406	E545
+C02075	Retinyl ester; all-trans-Retinyl ester	4.673908775704853	row6485	E1550
+C03765	4-Hydroxyphenylacetaldehyde	4.918041416697416	row1724	E387
+C02693	Indole-3-acetamide	4.490929808616677	row2748	E801
+C16596	5-Phenyl-1,3-oxazinane-2,4-dione	6.110790604939488	row3254	E960
+C00170	5-Methylthioadenosine	6.109941002086613	row6314	E1530
+dcsptn1	docosa-4,7,10,13,16-pentaenoic acid (n-6)	4.4069696117641675	row7265	E1667
+tetpent3	tetracosapentaenoic acid, n-3	-5.084224047748262	row8464	E1767
+CE3140		4.900549093360384	row8122	E1782
+C01879	5-Oxoproline	4.365991673825187	row2155	E318
+CE5932	13,14-epoxy-retinol	5.040482285395977	row6515	E1550
+vacc	vaccenic acid	5.040482285395977	row6515	E1450
+C00712	(9Z)-Octadecenoic acid; (Z)-Octadec-9-enoic acid; Oleate; Oleic acid	4.502294273823738	row6542	E581
+CE3140		4.769257742485137	row8098	E1782
+C00219	arachidonic acid	4.502294273823738	row6542	E573
+CE5932	13,14-epoxy-retinol	5.134227470763032	row6484	E1550
+C16596	5-Phenyl-1,3-oxazinane-2,4-dione	5.099629471405202	row3227	E960
+C14762	13(S)-HODE; (13S)-Hydroxyoctadecadienoic acid; (9Z, 11E)-(13S)-13-Hydroxyoctadeca-9,11-dienoic acid	4.2843478567151845	row6272	E1526
+C14825	9(10)-EpOME; (9R,10S)-(12Z)-9,10-Epoxyoctadecenoic acid	4.2843478567151845	row6272	E1526
+C01074	N-Acetylgalactosamine; N-Acetylchondrosamine; 2-Acetamido-2-deoxygalactose; GalNAc	5.373662667444362	row3983	E1175
+C05635	5-Hydroxyindoleacetate	5.099629471405202	row3227	E960
+CE5932	13,14-epoxy-retinol	4.673908775704853	row6485	E1550
+C04717	(9Z,11E)-(13S)-13-Hydroperoxyoctadeca-9,11-dienoic acid; (9Z,11E)-(13S)-13-Hydroperoxyoctadeca-9,11-dienoate; 13(S)-HPODE; 13S-Hydroperoxy-9Z,11E-octadecadienoic acid	4.426399036091382	row2253	E624
+C00712	(9Z)-Octadecenoic acid; (Z)-Octadec-9-enoic acid; Oleate; Oleic acid	4.568764555086072	row5843	E581
+C16596	5-Phenyl-1,3-oxazinane-2,4-dione	4.822887835423286	row3251	E960
+C06427	(9Z,12Z,15Z)-Octadecatrienoic acid; alpha-Linolenic acid; 9,12,15-Octadecatrienoic acid; Linolenate; alpha-Linolenate	4.998271259797492	row5699	E545
+C05635	5-Hydroxyindoleacetate	4.822887835423286	row3251	E960
+C00643	5-Hydroxy-L-tryptophan	5.373662667444362	row3983	E1165
+C04281	L-1-Pyrroline-3-hydroxy-5-carboxylate	4.365991673825187	row2155	E318
+C02075	Retinyl ester; all-trans-Retinyl ester	5.134227470763032	row6484	E1550
+C00219	arachidonic acid	4.557888654405602	row6566	E573
